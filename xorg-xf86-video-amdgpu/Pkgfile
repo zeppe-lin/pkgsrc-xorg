@@ -1,0 +1,21 @@
+# Description: Xorg driver for AMD GPUs using the amdgpu kernel driver
+# URL:         http://xorg.freedesktop.org
+# Depends on:  xorg-server
+
+name=xorg-xf86-video-amdgpu
+version=23.0.0
+release=1
+source=https://www.x.org/archive/individual/driver/${name#*-}-$version.tar.gz
+
+build() {
+	mkdir build; cd build
+
+	../${name#*-}-$version/configure  \
+		--prefix=/usr             \
+		--enable-static           \
+		--enable-udev             \
+		--enable-glamor           \
+
+	make V=1 CFLAGS="$CFLAGS -fcommon"
+	make DESTDIR=$PKG install
+}

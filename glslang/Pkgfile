@@ -1,0 +1,42 @@
+# Description: OpenGL and OpenGL ES shader front end and validator
+# URL:         https://www.khronos.org/opengles/sdk/tools/Reference-Compiler
+# Depends on:  spirv-tools
+
+name=glslang
+version=12.1.0
+release=1
+source="https://github.com/KhronosGroup/$name/archive/$version/$name-sdk-$version.tar.gz
+	pkg-config-compat.patch"
+
+build() {
+	patch -Np1 -d $name-$version -i $SRC/pkg-config-compat.patch
+
+	# -D ENABLE_PCH=OFF: disable precompiled headers, required for
+	#                    Vulkan updates
+	PKGMK_GLSLANG_CONF="
+		-S $name-$version
+		-G Ninja
+		-D CMAKE_INSTALL_PREFIX=/usr
+		-D CMAKE_INSTALL_LIBDIR=lib
+		-D CMAKE_BUILD_TYPE=Release
+		-D CMAKE_SKIP_RPATH=yes
+		-D ENABLE_PCH=OFF
+		-Wno-dev"
+	CXXFLAGS="$CXXFLAGS -ffat-lto-objects"
+
+	cmake -B build-static $PKGMK_GLSLANG_CONF \
+	      -D BUILD_SHARED_LIBS=OFF \
+	      -D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS"
+	ninja -C build-static -j ${JOBS:-1} -v
+
+	# -Wl,--no-undefined:
+	# https://github.com/KhronosGroup/glslang/issues/1484
+	cmake -B build-shared $PKGMK_GLSLANG_CONF \
+		-D BUILD_SHARED_LIBS=ON \
+		-D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS" \
+		-D CMAKE_SHARED_LINKER_FLAGS='-Wl,--no-undefined'
+	ninja -C build-shared -j ${JOBS:-1} -v
+
+	DESTDIR=$PKG ninja -C build-static install
+	DESTDIR=$PKG ninja -C build-shared install
+}

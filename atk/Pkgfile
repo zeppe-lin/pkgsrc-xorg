@@ -1,0 +1,28 @@
+# Description: Set of interfaces for accessibility
+# URL:         https://www.gtk.org/
+# Depends on:  glib
+
+name=atk
+version=2.38.0
+release=2
+source=http://download.gnome.org/sources/atk/${version%.*}/atk-$version.tar.xz
+
+build() {
+	# don't build tests, docs and i18n
+	sed -e "/subdir('tests')/d"  \
+	    -e "/subdir('po')/d"     \
+	    -e "/subdir('docs')/d"   \
+	    -i atk-$version/meson.build
+
+	meson setup build $name-$version  \
+		--prefix=/usr             \
+		--buildtype=plain         \
+		--wrap-mode=nodownload    \
+		-D b_lto=true             \
+		-D b_pie=true             \
+		-D docs=false             \
+		-D introspection=false    \
+
+	ninja -C build -j ${JOBS:-1} -v
+	DESTDIR=$PKG ninja -C build install
+}

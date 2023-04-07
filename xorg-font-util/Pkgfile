@@ -1,0 +1,17 @@
+# Description: Font package creation/installation utilities
+# URL:         http://xorg.freedesktop.org
+
+name=xorg-font-util
+version=1.4.0
+release=1
+source=https://www.x.org/releases/individual/font/font-util-$version.tar.xz
+
+build() {
+	mkdir build; cd build
+
+	../font-util-$version/configure  \
+		--prefix=/usr            \
+
+	make V=1
+	make DESTDIR=$PKG install
+}
