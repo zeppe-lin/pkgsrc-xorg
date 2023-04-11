@@ -3,9 +3,9 @@
 # Depends on:  xorg-libx11
 
 name=xorg-libxfixes
-version=6.0.0
+version=6.0.1
 release=1
-source=https://www.x.org/releases/individual/lib/libXfixes-$version.tar.bz2
+source=https://www.x.org/releases/individual/lib/libXfixes-$version.tar.xz
 
 build() {
 	mkdir build; cd build
