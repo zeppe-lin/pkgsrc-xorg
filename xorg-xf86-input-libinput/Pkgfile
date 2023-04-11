@@ -1,9 +1,9 @@
-# Description: libinput-based input driver for the Xorg X server
+# Description: Libinput-based input driver for the Xorg X server
 # URL:         http://xorg.freedesktop.org
 # Depends on:  libinput xorg-server
 
 name=xorg-xf86-input-libinput
-version=1.2.1
+version=1.3.0
 release=1
 source=https://www.x.org/releases/individual/driver/xf86-input-libinput-$version.tar.xz
 
