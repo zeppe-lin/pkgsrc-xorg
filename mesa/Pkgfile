@@ -1,10 +1,10 @@
 # Description: Mesa 3D Graphics Library
-# URL:         https://www.mesa3d.org/
+# URL:         https://www.mesa3d.org
 # Depends on:  elfutils glslang libdrm libglvnd llvm py3-mako xorg-libxdamage xorg-libxrandr xorg-libxshmfence xorg-libxvmc xorg-libxxf86vm libva libvdpau
 # Optional:    libva libvdpau wayland-protocols
 
 name=mesa
-version=22.2.5
+version=23.0.3
 release=1
 source=https://archive.mesa3d.org/$name-$version.tar.xz
 
@@ -47,7 +47,7 @@ build() {
 		-D osmesa=true \
 		-D gallium-xa=enabled \
 		-D gallium-drivers=${PKGMK_MESA_GALLIUM}crocus,iris,\
-nouveau,r300,r600,radeonsi,svga,swrast,virgl \
+nouveau,r300,r600,radeonsi,svga,swrast,virgl,i915 \
 		-D platforms=x11 \
 		-D shared-glapi=enabled \
 		-D vulkan-drivers=amd,intel \
