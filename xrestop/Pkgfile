@@ -1,11 +1,11 @@
-# Description: 'Top' like tool for monitoring X Client server resource usage
+# Description: Top like tool for monitoring X Client server resource usage
 # URL:         http://freedesktop.org/wiki/Software/xrestop
 # Depends on:  xorg-libxres
 
 name=xrestop
-version=0.5
+version=0.6
 release=1
-source=https://xorg.freedesktop.org/archive/individual/app/$name-$version.tar.bz2
+source=https://xorg.freedesktop.org/archive/individual/app/$name-$version.tar.xz
 
 build() {
 	mkdir build; cd build
