@@ -3,9 +3,9 @@
 # Depends on:  xorg-libxi xorg-libxinerama xorg-libxrandr
 
 name=xorg-xinput
-version=1.6.3
+version=1.6.4
 release=1
-source=https://www.x.org/releases/individual/app/xinput-$version.tar.bz2
+source=https://www.x.org/releases/individual/app/xinput-$version.tar.xz
 
 build() {
 	mkdir build; cd build
