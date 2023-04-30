@@ -3,8 +3,8 @@
 # Depends on:   fontconfig
 
 name=ttf-font-terminus
-version=4.49.2
-release=2
+version=4.49.3
+release=1
 source=https://files.ax86.net/terminus-ttf/files/$version/terminus-ttf-$version.zip
 
 build() {
