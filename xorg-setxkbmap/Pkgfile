@@ -3,7 +3,7 @@
 # Depends on:  xorg-libxkbfile
 
 name=xorg-setxkbmap
-version=1.3.3
+version=1.3.4
 release=1
 source=https://www.x.org/releases/individual/app/setxkbmap-$version.tar.xz
 
