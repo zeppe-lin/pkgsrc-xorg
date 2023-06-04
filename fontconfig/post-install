@@ -1,0 +1,6 @@
+#!/bin/sh -ex
+
+# Build font information cache files.
+/usr/bin/fc-cache --system-only
+
+# End of file.
