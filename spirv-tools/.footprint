@@ -6,6 +6,7 @@ drwxr-xr-x	root/root	usr/bin/
 -rwxr-xr-x	root/root	usr/bin/spirv-lesspipe.sh
 -rwxr-xr-x	root/root	usr/bin/spirv-link
 -rwxr-xr-x	root/root	usr/bin/spirv-lint
+-rwxr-xr-x	root/root	usr/bin/spirv-objdump
 -rwxr-xr-x	root/root	usr/bin/spirv-opt
 -rwxr-xr-x	root/root	usr/bin/spirv-reduce
 -rwxr-xr-x	root/root	usr/bin/spirv-val
