@@ -1,6 +1,6 @@
 # Description: Library for layout and rendering of text
-# URL:         https://www.gtk.org/
-# Depends on:  fribidi xorg-libxft
+# URL:         https://www.gtk.org
+# Depends on:  xorg-libxft
 
 name=pango
 
@@ -9,13 +9,17 @@ name=pango
 #version=1.43.0
 
 version=1.50.14
-release=1
+release=2
 source="https://download.gnome.org/sources/$name/${version%.*}/$name-$version.tar.xz
-	CVE-2019-1010238.patch"
+	CVE-2019-1010238.patch
+	no-fribidi.patch"
 
 build() {
 	# (in case of 1.43.0)
 	#patch -p1 -d $name-$version -i $SRC/CVE-2019-1010238.patch
+
+	# Remove fribidi dependency.
+	patch -p1 -d $name-$version -i $SRC/no-fribidi.patch
 
 	meson build $name-$version         \
 		--prefix=/usr              \
