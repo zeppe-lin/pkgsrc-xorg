@@ -1,9 +1,9 @@
 # Description: X keyboard configuration database
-# URL:         https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config
+# URL:         https://www.freedesktop.org/wiki/Software/XKeyboardConfig/
 # Depends on:  xorg-xkbcomp libxslt
 
 name=xkeyboard-config
-version=2.38
+version=2.39
 release=1
 source=https://www.x.org/releases/individual/data/$name/$name-$version.tar.xz
 
