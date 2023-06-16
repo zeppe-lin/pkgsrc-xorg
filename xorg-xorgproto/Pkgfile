@@ -2,7 +2,7 @@
 # URL:         http://xorg.freedesktop.org
 
 name=xorg-xorgproto
-version=2023.1
+version=2023.2
 release=1
 source=https://xorg.freedesktop.org/archive/individual/proto/xorgproto-$version.tar.xz
 
@@ -19,15 +19,15 @@ build() {
 	DESTDIR=$PKG ninja -C build install
 
 	# remove junk
-	rm -r   $PKG/usr/include/X11/extensions/apple*      \
-		$PKG/usr/include/X11/extensions/windows*    \
-		$PKG/usr/share/pkgconfig/applewmproto.pc    \
-		$PKG/usr/share/pkgconfig/windowswmproto.pc  \
-		$PKG/usr/share/doc
+	rm -r $PKG/usr/include/X11/extensions/apple*      \
+	      $PKG/usr/include/X11/extensions/windows*    \
+	      $PKG/usr/share/pkgconfig/applewmproto.pc    \
+	      $PKG/usr/share/pkgconfig/windowswmproto.pc  \
+	      $PKG/usr/share/doc
 
 	# xorg-libxvmc >= 1.0.13-2
-	rm -r   $PKG/usr/include/X11/extensions/vldXvMC.h
+	rm -r $PKG/usr/include/X11/extensions/vldXvMC.h
 
 	# xorg-libx11 >= 1.8.1-2
-	rm -r   $PKG/usr/include/X11/extensions/XKBgeom.h
+	rm -r $PKG/usr/include/X11/extensions/XKBgeom.h
 }
