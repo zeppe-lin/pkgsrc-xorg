@@ -3,9 +3,9 @@
 # Depends on:  libdrm libglvnd xorg-libxfixes
 
 name=libva
-version=2.18.0
+version=2.19.0
 release=1
-source=https://github.com/intel/$name/archive/$version/$name-$version.tar.gz
+source=https://github.com/intel/libva/archive/$version/libva-$version.tar.gz
 
 build() {
 	if pkgman isinst wayland-protocols; then
@@ -16,7 +16,8 @@ build() {
 		PKGMK_LIBVA="$PKGMK_LIBVA -D with_x11=yes"
 	fi
 
-	meson setup build $name-$version \
+	# -D enable_docs=false: otherwise requires doxygen
+	meson setup build libva-$version \
 		--prefix=/usr            \
 		--buildtype=plain        \
 		--wrap-mode=nodownload   \
