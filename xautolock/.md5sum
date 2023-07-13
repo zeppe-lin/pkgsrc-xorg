@@ -1,2 +1,8 @@
-0cb65b3825dd8df2a4d28ff607c06153  union-wait.patch
+f588a25d73418cec0d08e998f8b1e735  10-fix-memory-corruption.patch
+f0ba4cd510ad8e5c54e77f33e42347af  11-fix-no-dpms.patch
+4730b0f1f6124efdad462ebeddde94d9  12-fix-manpage.patch
+2ad9d4deaca4b3aba4d634b8db4260c1  13-fix-hppa-build.patch
+f472c1dd22ee808e93488908a4f8943a  14-do-not-use-union-wait-type.patch
+720c7a5e0a8bb1627c9b72e1adbfbaba  15-rephrase-manpage.patch
+31fe4998a89f0035548609ccf9aa659e  16-unlimit-maxtimes.patch
 9526347a202694ad235d731d9d3de91f  xautolock-2.2.tgz

@@ -4,14 +4,20 @@
 
 name=xautolock
 version=2.2
-release=1
+release=2
 source="http://ibiblio.org/pub/Linux/X11/screensavers/$name-$version.tgz
-	union-wait.patch"
+	10-fix-memory-corruption.patch
+	11-fix-no-dpms.patch
+	12-fix-manpage.patch
+	13-fix-hppa-build.patch
+	14-do-not-use-union-wait-type.patch
+	15-rephrase-manpage.patch
+	16-unlimit-maxtimes.patch"
 
 build() {
 	cd $name-$version
 
-	patch -p1 -i $SRC/union-wait.patch
+	for _P in $SRC/*.patch; do patch -p1 -i $_P; done
 
 	xmkmf
 
