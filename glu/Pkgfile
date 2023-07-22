@@ -3,16 +3,19 @@
 # Depends on:  mesa
 
 name=glu
-version=9.0.2
+version=9.0.3
 release=1
-source=https://mesa.freedesktop.org/archive/$name/$name-$version.tar.xz
+source=https://mesa.freedesktop.org/archive/glu/glu-$version.tar.xz
 
 build() {
-	mkdir build; cd build
+	meson setup build glu-$version     \
+		--prefix=/usr              \
+		--buildtype=plain          \
+		--wrap-mode=nodownload     \
+		-D b_lto=true              \
+		-D b_pie=true              \
+		-D default_library=shared  \
 
-	../$name-$version/configure  \
-		--prefix=/usr        \
-
-	make V=1
-	make DESTDIR=$PKG install
+	ninja -C build -j ${JOBS:-1} -v
+	DESTDIR=$PKG ninja -C build install
 }
