@@ -3,16 +3,15 @@
 # Depends on:  spirv-tools
 
 name=glslang
-version=12.2.0
+version=12.3.1
 release=1
-source="https://github.com/KhronosGroup/$name/archive/$version/$name-sdk-$version.tar.gz
-	pkg-config-compat.patch"
+source=https://github.com/KhronosGroup/$name/archive/$version/$name-sdk-$version.tar.gz
 
 build() {
-	patch -Np1 -d $name-$version -i $SRC/pkg-config-compat.patch
-
-	# -D ENABLE_PCH=OFF: disable precompiled headers, required for
-	#                    Vulkan updates
+	# -D ENABLE_PCH=OFF:
+	#    disable precompiled headers, required for Vulkan updates
+	# -D BUILD_EXTERNAL=OFF:
+	#    disable building external dependencies in /External
 	PKGMK_GLSLANG_CONF="
 		-S $name-$version
 		-G Ninja
@@ -21,6 +20,7 @@ build() {
 		-D CMAKE_BUILD_TYPE=Release
 		-D CMAKE_SKIP_RPATH=yes
 		-D ENABLE_PCH=OFF
+		-D BUILD_EXTERNAL=OFF
 		-Wno-dev"
 	CXXFLAGS="$CXXFLAGS -ffat-lto-objects"
 
