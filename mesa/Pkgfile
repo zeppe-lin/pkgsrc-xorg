@@ -27,6 +27,10 @@ build() {
 	#	PKGMK_MESA_PLATFORMS+=',x11'
 	#fi
 
+	# fix for glslang 12.3.1
+	sed "/find_program('glslangValidator'/s/glslangValidator/glslang/" \
+		-i mesa-$version/meson.build
+
 	CFLAGS="$CFLAGS -mtls-dialect=gnu"
 	CXXFLAGS="$CXXFLAGS -mtls-dialect=gnu"
 	meson setup build mesa-$version $PKGMK_MESA \
