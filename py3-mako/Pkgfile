@@ -8,8 +8,11 @@ release=1
 source=https://files.pythonhosted.org/packages/source/M/Mako/Mako-$version.tar.gz
 
 build() {
+	export TMPDIR="$PKGMK_WORK_DIR"
+
 	cd Mako-$version
 
 	/usr/bin/python3 setup.py build
-	/usr/bin/python3 setup.py install --prefix=/usr --root=$PKG -O2
+	/usr/bin/python3 setup.py install \
+		--skip-build --prefix=/usr --root=$PKG --optimize=2
 }
