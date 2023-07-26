@@ -17,7 +17,8 @@ source="http://ibiblio.org/pub/Linux/X11/screensavers/$name-$version.tgz
 build() {
 	cd $name-$version
 
-	for _P in $SRC/*.patch; do patch -p1 -i $_P; done
+	local _PATCH
+	for _PATCH in $SRC/*.patch; do patch -p1 -i $_PATCH; done
 
 	xmkmf
 
