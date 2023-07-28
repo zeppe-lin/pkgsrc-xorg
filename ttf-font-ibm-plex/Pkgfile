@@ -2,9 +2,9 @@
 # URL:         https://github.com/IBM/plex
 
 name=ttf-font-ibm-plex
-version=6.1.1
+version=6.3.0
 release=1
-source=$name-$version.zip
+source=$name-$version.zip::https://github.com/IBM/plex/releases/download/v$version/TrueType.zip
 
 build() {
 	cd TrueType
