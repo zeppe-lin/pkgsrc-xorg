@@ -10,6 +10,8 @@ source=https://github.com/$name/$name/archive/$version/$name-$version.tar.gz
 build() {
 	# -D graphite2=disabled: otherwise, required for building 
 	#    texlive and libreoffice with system harfbuzz
+	# -D docs=disabled: otherwise, requires gtk-doc
+	# -D glib=enabled: required for building pango
 	meson setup build $name-$version   \
 		--prefix=/usr              \
 		--buildtype=plain          \
