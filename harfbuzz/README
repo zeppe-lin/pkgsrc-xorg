@@ -2,8 +2,8 @@ README harfbuzz
 
 POST-INSTALL
 
-	After Harfbuzz is installed, reinstall freetype, libpng and which:
+	After Harfbuzz is installed, reinstall freetype:
 
-		sudo pkgman update -fr --deps --depsort freetype libpng which
+		sudo pkgman update -fr --deps --depsort freetype
 
 End of file.
