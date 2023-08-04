@@ -4,7 +4,7 @@
 # Optional:    libva libvdpau wayland-protocols
 
 name=mesa
-version=23.1.4
+version=23.1.5
 release=1
 source=https://archive.mesa3d.org/$name-$version.tar.xz
 
@@ -14,9 +14,13 @@ build() {
 	else
 		PKGMK_MESA="$PKGMK_MESA -D gallium-vdpau=disabled"
 	fi
+
+	# Gallium drivers.
+	# https://cgit.freedesktop.org/mesa/mesa/tree/src/gallium/drivers
 	if pkgman isinst vulkan-loader ; then
 		PKGMK_MESA_GALLIUM="zink,"
 	fi
+	PKGMK_MESA_GALLIUM="${PKGMK_MESA_GALLIUM}crocus,iris,nouveau,r300,r600,radeonsi,svga,swrast,virgl,i915"
 
 	## for future references
 	#if pkgman isinst wayland-protocols; then
@@ -50,8 +54,7 @@ build() {
 		-D glx=dri \
 		-D osmesa=true \
 		-D gallium-xa=enabled \
-		-D gallium-drivers=${PKGMK_MESA_GALLIUM}crocus,iris,\
-nouveau,r300,r600,radeonsi,svga,swrast,virgl,i915 \
+		-D gallium-drivers=$PKGMK_MESA_GALLIUM \
 		-D platforms=x11 \
 		-D shared-glapi=enabled \
 		-D vulkan-drivers=amd,intel \
