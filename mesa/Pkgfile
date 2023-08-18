@@ -4,9 +4,9 @@
 # Optional:    libva libvdpau wayland-protocols
 
 name=mesa
-version=23.1.5
+version=23.1.6
 release=1
-source=https://archive.mesa3d.org/$name-$version.tar.xz
+source=https://archive.mesa3d.org/mesa-$version.tar.xz
 
 build() {
 	if pkgman isinst libvdpau ; then
@@ -17,7 +17,7 @@ build() {
 
 	# Gallium drivers.
 	# https://cgit.freedesktop.org/mesa/mesa/tree/src/gallium/drivers
-	if pkgman isinst vulkan-loader ; then
+	if pkgman isinst vulkan-loader; then
 		PKGMK_MESA_GALLIUM="zink,"
 	fi
 	PKGMK_MESA_GALLIUM="${PKGMK_MESA_GALLIUM}crocus,iris,nouveau,r300,r600,radeonsi,svga,swrast,virgl,i915"
