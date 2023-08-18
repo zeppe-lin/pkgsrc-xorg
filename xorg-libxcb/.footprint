@@ -4,6 +4,7 @@ drwxr-xr-x	root/root	usr/include/xcb/
 -rw-r--r--	root/root	usr/include/xcb/bigreq.h
 -rw-r--r--	root/root	usr/include/xcb/composite.h
 -rw-r--r--	root/root	usr/include/xcb/damage.h
+-rw-r--r--	root/root	usr/include/xcb/dbe.h
 -rw-r--r--	root/root	usr/include/xcb/dpms.h
 -rw-r--r--	root/root	usr/include/xcb/dri2.h
 -rw-r--r--	root/root	usr/include/xcb/dri3.h
@@ -44,6 +45,11 @@ lrwxrwxrwx	root/root	usr/lib/libxcb-composite.so.0 -> libxcb-composite.so.0.0.0
 lrwxrwxrwx	root/root	usr/lib/libxcb-damage.so -> libxcb-damage.so.0.0.0
 lrwxrwxrwx	root/root	usr/lib/libxcb-damage.so.0 -> libxcb-damage.so.0.0.0
 -rwxr-xr-x	root/root	usr/lib/libxcb-damage.so.0.0.0
+-rw-r--r--	root/root	usr/lib/libxcb-dbe.a
+-rwxr-xr-x	root/root	usr/lib/libxcb-dbe.la
+lrwxrwxrwx	root/root	usr/lib/libxcb-dbe.so -> libxcb-dbe.so.0.0.0
+lrwxrwxrwx	root/root	usr/lib/libxcb-dbe.so.0 -> libxcb-dbe.so.0.0.0
+-rwxr-xr-x	root/root	usr/lib/libxcb-dbe.so.0.0.0
 -rw-r--r--	root/root	usr/lib/libxcb-dpms.a
 -rwxr-xr-x	root/root	usr/lib/libxcb-dpms.la
 lrwxrwxrwx	root/root	usr/lib/libxcb-dpms.so -> libxcb-dpms.so.0.0.0
@@ -157,6 +163,7 @@ lrwxrwxrwx	root/root	usr/lib/libxcb.so.1 -> libxcb.so.1.1.0
 drwxr-xr-x	root/root	usr/lib/pkgconfig/
 -rw-r--r--	root/root	usr/lib/pkgconfig/xcb-composite.pc
 -rw-r--r--	root/root	usr/lib/pkgconfig/xcb-damage.pc
+-rw-r--r--	root/root	usr/lib/pkgconfig/xcb-dbe.pc
 -rw-r--r--	root/root	usr/lib/pkgconfig/xcb-dpms.pc
 -rw-r--r--	root/root	usr/lib/pkgconfig/xcb-dri2.pc
 -rw-r--r--	root/root	usr/lib/pkgconfig/xcb-dri3.pc
