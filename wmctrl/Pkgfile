@@ -1,0 +1,19 @@
+# Description: Control your EWMH compliant window manager from command line
+# URL:         https://github.com/saravanabalagi/wmctrl
+# Depends on:  glib libpcre2 xorg-libxmu
+
+name=wmctrl
+version=1.07-7ecfd2a
+release=1
+source=https://github.com/saravanabalagi/$name/archive/${version#*-}/$name-$version.tar.gz
+
+build() {
+	mkdir build; cd build
+
+	../$name*/configure              \
+		--prefix=/usr            \
+		--mandir=/usr/share/man  \
+
+	make V=1
+	make DESTDIR=$PKG install
+}
