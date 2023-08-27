@@ -3,15 +3,15 @@
 # Depends on:  spirv-tools
 
 name=glslang
-version=12.3.1
+version=13.0.0
 release=1
 source=https://github.com/KhronosGroup/$name/archive/$version/$name-sdk-$version.tar.gz
 
 build() {
 	# -D ENABLE_PCH=OFF:
-	#    disable precompiled headers, required for Vulkan updates
+	#  disable precompiled headers, required for Vulkan updates
 	# -D BUILD_EXTERNAL=OFF:
-	#    disable building external dependencies in /External
+	#  disable building external dependencies in /External
 	PKGMK_GLSLANG_CONF="
 		-S $name-$version
 		-G Ninja
@@ -30,7 +30,7 @@ build() {
 	ninja -C build-static -j ${JOBS:-1} -v
 
 	# -Wl,--no-undefined:
-	# https://github.com/KhronosGroup/glslang/issues/1484
+	#  https://github.com/KhronosGroup/glslang/issues/1484
 	cmake -B build-shared $PKGMK_GLSLANG_CONF \
 		-D BUILD_SHARED_LIBS=ON \
 		-D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS" \
