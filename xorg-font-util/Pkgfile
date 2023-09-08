@@ -1,8 +1,8 @@
 # Description: Font package creation/installation utilities
-# URL:         http://xorg.freedesktop.org
+# URL:         https://gitlab.freedesktop.org/xorg/font/util
 
 name=xorg-font-util
-version=1.4.0
+version=1.4.1
 release=1
 source=https://www.x.org/releases/individual/font/font-util-$version.tar.xz
 
