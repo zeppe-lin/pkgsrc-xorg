@@ -3,7 +3,7 @@
 # Depends on:  xorg-libx11
 
 name=xkbswitch
-version=0.1.6-280e394
+version=0.1.6-68522e5
 release=1
 source=https://github.com/zeppe-lin/$name/archive/${version#*-}/$name-$version.tar.gz
 
