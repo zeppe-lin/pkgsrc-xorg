@@ -1,6 +1,6 @@
 # Description: GL Vendor-Neutral Dispatch library
 # URL:         https://github.com/NVIDIA/libglvnd
-# Depends on:  libbsd xorg-libxext
+# Depends on:  xorg-libx11
 
 name=libglvnd
 version=1.7.0
