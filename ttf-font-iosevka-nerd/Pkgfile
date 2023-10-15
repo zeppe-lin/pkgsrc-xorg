@@ -3,7 +3,7 @@
 # Depends on:  git
 
 name=ttf-font-iosevka-nerd
-version=2.1.0-da88bdb
+version=3.0.2-f7885a1
 release=1
 source=/dev/null
 
