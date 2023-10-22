@@ -30,6 +30,7 @@ drwxr-xr-x	root/root	usr/lib/dri/
 -rwxr-xr-x	root/root	usr/lib/dri/virtio_gpu_dri.so
 -rwxr-xr-x	root/root	usr/lib/dri/virtio_gpu_drv_video.so
 -rwxr-xr-x	root/root	usr/lib/dri/vmwgfx_dri.so
+-rwxr-xr-x	root/root	usr/lib/dri/zink_dri.so
 lrwxrwxrwx	root/root	usr/lib/libEGL_mesa.so -> libEGL_mesa.so.0
 lrwxrwxrwx	root/root	usr/lib/libEGL_mesa.so.0 -> libEGL_mesa.so.0.0.0
 -rwxr-xr-x	root/root	usr/lib/libEGL_mesa.so.0.0.0
