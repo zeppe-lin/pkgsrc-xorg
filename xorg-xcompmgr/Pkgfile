@@ -1,0 +1,18 @@
+# Description: Compositing manager for X
+# URL:         https://gitlab.freedesktop.org/xorg/app/xcompmgr
+# Depends on:  xorg-libxcomposite xorg-libxdamage xorg-libxrender
+
+name=xorg-xcompmgr
+version=1.1.8
+release=1
+source=https://www.x.org/releases/individual/app/xcompmgr-$version.tar.bz2
+
+build() {
+	mkdir build; cd build
+
+	../xcompmgr-$version/configure  \
+		--prefix=/usr           \
+
+	make V=1
+	make DESTDIR=$PKG install
+}
