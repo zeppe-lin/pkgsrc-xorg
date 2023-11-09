@@ -1,10 +1,10 @@
 # Description: Handle keyboard descriptions
-# URL:         https://xkbcommon.org
+# URL:         https://xkbcommon.org/
 # Depends on:  libbsd xkeyboard-config
 # Optional:    wayland-protocols
 
 name=libxkbcommon
-version=1.5.0
+version=1.6.0
 release=1
 source=https://github.com/xkbcommon/$name/archive/xkbcommon-$version.tar.gz
 
