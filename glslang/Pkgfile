@@ -3,7 +3,7 @@
 # Depends on:  spirv-tools
 
 name=glslang
-version=13.0.0
+version=13.1.1
 release=1
 source=https://github.com/KhronosGroup/$name/archive/$version/$name-sdk-$version.tar.gz
 
@@ -21,6 +21,7 @@ build() {
 		-D CMAKE_SKIP_RPATH=yes
 		-D ENABLE_PCH=OFF
 		-D BUILD_EXTERNAL=OFF
+		-D ALLOW_EXTERNAL_SPIRV_TOOLS=ON
 		-Wno-dev"
 	CXXFLAGS="$CXXFLAGS -ffat-lto-objects"
 
