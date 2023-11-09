@@ -1,5 +1,5 @@
 # Description: Protocol headers for interaction with virtualized desktop devices
-# URL:         https://spice-space.org
+# URL:         https://spice-space.org/
 
 name=spice-protocol
 version=0.14.4
