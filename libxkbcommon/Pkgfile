@@ -1,6 +1,6 @@
 # Description: Handle keyboard descriptions
 # URL:         https://xkbcommon.org/
-# Depends on:  libbsd xkeyboard-config
+# Depends on:  xkeyboard-config
 # Optional:    wayland-protocols
 
 name=libxkbcommon
