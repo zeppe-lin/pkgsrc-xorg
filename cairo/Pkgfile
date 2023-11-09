@@ -1,9 +1,9 @@
 # Description: 2D graphics library with support for multiple output devices
-# URL:         https://www.cairographics.org
+# URL:         https://www.cairographics.org/
 # Depends on:  fontconfig glib lzo xorg-libpixman xorg-libxext xorg-libxrender
 
 name=cairo
-version=1.17.8
+version=1.18.0
 release=1
 source=https://gitlab.freedesktop.org/cairo/cairo/-/archive/$version/cairo-$version.tar.bz2
 
