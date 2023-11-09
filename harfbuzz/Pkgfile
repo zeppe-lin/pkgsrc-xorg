@@ -1,6 +1,6 @@
 # Description: OpenType text shaping engine
 # URL:         https://harfbuzz.github.io/
-# Depends on:  cairo
+# Depends on:  cairo libpcre2
 
 name=harfbuzz
 version=8.2.2
