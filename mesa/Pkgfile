@@ -4,7 +4,7 @@
 # Optional:    libva libvdpau wayland-protocols
 
 name=mesa
-version=23.1.7
+version=23.2.1
 release=1
 source=https://archive.mesa3d.org/mesa-$version.tar.xz
 
