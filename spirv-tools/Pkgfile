@@ -3,13 +3,13 @@
 # Depends on:  spirv-headers
 
 name=spirv-tools
-version=1.3.261.1
+version=1.3.268.0
 release=1
-source=https://github.com/KhronosGroup/SPIRV-Tools/archive/sdk-$version/SPIRV-Tools-v$version.tar.gz
+source=https://github.com/KhronosGroup/SPIRV-Tools/archive/vulkan-sdk-$version/SPIRV-Tools-v$version.tar.gz
 
 build() {
 	PKGMK_SPIRV_TOOLS="
-	-S SPIRV-Tools-sdk-$version
+	-S SPIRV-Tools-vulkan-sdk-$version
 	-G Ninja
 	-D CMAKE_INSTALL_PREFIX=/usr
 	-D CMAKE_INSTALL_LIBDIR=lib
