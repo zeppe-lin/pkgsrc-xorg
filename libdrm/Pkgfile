@@ -1,13 +1,15 @@
 # Description: Userspace interface to kernel DRM services
-# URL:         https://dri.freedesktop.org/
+# URL:         https://gitlab.freedesktop.org/mesa/drm
 # Depends on:  docutils xorg-libpciaccess
 
 name=libdrm
-version=2.4.117
+version=2.4.118
 release=1
 source=https://dri.freedesktop.org/$name/$name-$version.tar.xz
 
 build() {
+	# -D udev=true: enable support for using udev instead of mknod(1)
+	# -D man-pages=enabled: requires docutils
 	meson setup build $name-$version        \
 		--prefix=/usr                   \
 		--buildtype=plain               \
