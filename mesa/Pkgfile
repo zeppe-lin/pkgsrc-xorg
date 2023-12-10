@@ -1,10 +1,10 @@
 # Description: Mesa 3D Graphics Library
 # URL:         https://www.mesa3d.org/
-# Depends on:  elfutils glslang libdrm libglvnd llvm py3-mako xorg-libxdamage xorg-libxrandr xorg-libxshmfence xorg-libxvmc xorg-libxxf86vm libva libvdpau
+# Depends on:  elfutils glslang libdrm libglvnd llvm py3-mako xorg-libxdamage xorg-libxrandr xorg-libxshmfence xorg-libxvmc xorg-libxxf86vm libva libvdpau vulkan-loader
 # Optional:    libva libvdpau wayland-protocols
 
 name=mesa
-version=23.2.1
+version=23.3.0
 release=1
 source=https://archive.mesa3d.org/mesa-$version.tar.xz
 
