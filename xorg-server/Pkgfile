@@ -3,7 +3,7 @@
 # Depends on:  libepoxy nettle xorg-bdftopcf xorg-font-util xorg-libdmx xorg-libxaw xorg-libxcomposite xorg-libxcursor xorg-libxcvt xorg-libxfont2 xorg-libxft xorg-libxinerama xorg-libxres xorg-libxtst xorg-libxxf86dga xorg-mkfontscale xorg-xcb-util-keysyms xorg-xkbcomp
 
 name=xorg-server
-version=21.1.9
+version=21.1.10
 release=1
 source=https://www.x.org/releases/individual/xserver/$name-$version.tar.xz
 
