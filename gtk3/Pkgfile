@@ -3,10 +3,10 @@
 # Depends on:  atk gdk-pixbuf libepoxy pango xorg-libxcomposite xorg-libxcursor xorg-libxi xorg-libxinerama
 
 name=gtk3
-version=3.24.38
-release=2
+version=3.24.39
+release=1
 source="https://download.gnome.org/sources/gtk+/${version%.*}/gtk+-$version.tar.xz
-	https://github.com/lah7/gtk3-classic/archive/$version/gtk3-classic-$version-3.tar.gz
+	https://github.com/lah7/gtk3-classic/archive/$version/gtk3-classic-$version.tar.gz
 	gtk.immodules gtk-register-3.sh
 	no-fribidi.patch"
 
@@ -23,7 +23,6 @@ build() {
 	fi
 
 	# provide a more traditional experience (gtk3-classic patchset)
-	local _PATCH
 	while read -r _PATCH; do
 		# skip comments and newlines
 		case $_PATCH in \#*|"") continue ;; esac
