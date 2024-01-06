@@ -1,22 +1,25 @@
 # Description: Pixel manipulation library
-# URL:         http://xorg.freedesktop.org
+# URL:         https://gitlab.freedesktop.org/pixman/pixman
 
 name=xorg-libpixman
-version=0.42.2
+version=0.43.0
 release=1
 source=https://www.x.org/releases/individual/lib/pixman-$version.tar.xz
 
 build() {
-	# don't build test programs
-	sed -i 's|^SUBDIRS *=.*|SUBDIRS = pixman|' \
-		pixman-$version/Makefile.in
+	# -D gtk=disabled: disable demos using GTK
+	# -D libpng=disabled: disable using libpng
+	meson setup build pixman-$version  \
+		--prefix=/usr              \
+		--buildtype=plain          \
+		--wrap-mode=nodownload     \
+		-D b_lto=true              \
+		-D b_pie=true              \
+		-D tests=disabled          \
+		-D demos=disabled          \
+		-D gtk=disabled            \
+		-D libpng=disabled         \
 
-	mkdir build; cd build
-
-	../pixman-$version/configure  \
-		--prefix=/usr         \
-		--disable-gtk         \
-
-	make V=1
-	make DESTDIR=$PKG install
+	ninja -C build -j ${JOBS:-1} -v
+	DESTDIR=$PKG ninja -C build install
 }
