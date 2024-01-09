@@ -1,9 +1,9 @@
 # Description: Obsolete C preprocessor interface to the make utility
-# URL:         http://xorg.freedesktop.org
+# URL:         https://gitlab.freedesktop.org/xorg/util/imake
 # Depends on:  xorg-cf-files xorg-xorgproto
 
 name=xorg-imake
-version=1.0.9
+version=1.0.10
 release=1
 source=https://www.x.org/releases/individual/util/imake-$version.tar.xz
 
