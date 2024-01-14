@@ -1,9 +1,9 @@
 OVERVIEW
 --------
-This directory contains xorg pkgsrc collection.  This collection
+This directory contains **xorg** pkgsrc collection.  This collection
 contains build scripts and files for the packages required for X
 Window System applications.  Packages in this collection depends
-**only** on the system and core pkgsrc collections.
+**only** on the **system** and **core** pkgsrc collections.
 
 This distribution was originally forked from CRUX ports as of version
 3.6 and rewritten in POSIX sh(1p).  Also, the Zeppe-Lin has its own
