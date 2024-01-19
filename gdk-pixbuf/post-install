@@ -1,2 +1,6 @@
 #!/bin/sh -ex
+
+# Register gdk-pixbuf loaders.
 /usr/bin/gdk-pixbuf-register
+
+# End of file.
