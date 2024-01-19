@@ -32,6 +32,10 @@ build() {
 	ninja -C build -j ${JOBS:-1} -v
 	DESTDIR=$PKG ninja -C build install
 
+	# fix reference to unexistent icon
+	sed -i 's/^Icon=picom/Icon=compton/' \
+		$PKG/usr/share/applications/picom.desktop
+
 	# install config files
 	install -m 0644 -D $SRC/picom.conf $PKG/etc/xdg/picom.conf
 	install -m 0644 -D picom-$version/picom.sample.conf \
