@@ -1,16 +1,18 @@
 # Description: Compositor for X (xcompmgr-dana & compton fork)
 # URL:         https://github.com/yshui/picom
-# Depends on:  hicolor-icon-theme libconfig libev mesa xorg-libpixman xorg-xcb-util-image xorg-xcb-util-renderutil uthash
+# Depends on:  asciidoctor hicolor-icon-theme libconfig libev mesa uthash xorg-libpixman xorg-xcb-util-image xorg-xcb-util-renderutil
 
 name=picom
 version=10.2
-release=1
+release=2
 source="https://github.com/yshui/picom/archive/v$version/$name-v$version.tar.gz
-	picom.1
-	picom-trans.1
-	picom.conf"
+	picom.conf
+	asciidoctor.patch"
 
 build() {
+	# use available asciidoctor(1) instead of a2x to generate manpages
+	patch -d picom-$version -p6 -i $SRC/asciidoctor.patch
+
 	meson setup build picom-$version   \
 		--prefix=/usr              \
 		--buildtype=plain          \
@@ -24,7 +26,7 @@ build() {
 		-D sanitize=false          \
 		-D unittest=false          \
 		-D vsync_drm=true          \
-		-D with_docs=false         \
+		-D with_docs=true          \
 		-D xrescheck=false         \
 
 	ninja -C build -j ${JOBS:-1} -v
@@ -34,8 +36,4 @@ build() {
 	install -m 0644 -D $SRC/picom.conf $PKG/etc/xdg/picom.conf
 	install -m 0644 -D picom-$version/picom.sample.conf \
 		$PKG/etc/xdg/picom.conf.example
-
-	# install man pages
-	install -m 0644 -Dt $PKG/usr/share/man/man1/ \
-		$SRC/picom.1 $SRC/picom-trans.1
 }

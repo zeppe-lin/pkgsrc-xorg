@@ -1,0 +1,31 @@
+diff '--color=auto' -pruN /var/cache/pkgmk/sources/picom-10.2.orig/man/meson.build /var/cache/pkgmk/sources/picom-10.2/man/meson.build
+--- /var/cache/pkgmk/sources/picom-10.2.orig/man/meson.build	2024-01-19 14:45:09.490854343 +0200
++++ /var/cache/pkgmk/sources/picom-10.2/man/meson.build	2024-01-19 15:12:30.920742182 +0200
+@@ -1,11 +1,11 @@
+ mans = ['picom.1', 'picom-trans.1']
+ if get_option('with_docs')
+-	a2x = find_program('a2x')
++	asciidoctor = find_program('asciidoctor')
+ 	foreach m : mans
+ 		custom_target(m, output: [m], input: [m+'.asciidoc'],
+-		              command: [a2x, '-a',
++		              command: [asciidoctor, '-a',
+ 		                        'picom-version='+version,
+-		                        '--format', 'manpage', '@INPUT@', '-D',
++		                        '--backend', 'manpage', '@INPUT@', '-D',
+ 		                        meson.current_build_dir()],
+ 		              install: true,
+ 		              install_dir: join_paths(get_option('mandir'), 'man1'))
+diff '--color=auto' -pruN /var/cache/pkgmk/sources/picom-10.2.orig/man/picom-trans.1.asciidoc /var/cache/pkgmk/sources/picom-10.2/man/picom-trans.1.asciidoc
+--- /var/cache/pkgmk/sources/picom-10.2.orig/man/picom-trans.1.asciidoc	2024-01-19 14:45:09.490854343 +0200
++++ /var/cache/pkgmk/sources/picom-10.2/man/picom-trans.1.asciidoc	2024-01-19 15:03:36.109439598 +0200
+@@ -1,7 +1,7 @@
+-picom-trans(1)
++picom\-trans(1)
+ ================
+ :doctype:     manpage
+-:man source:  picom
++:man source:  picom-trans
+ :man version: {picom-version}
+ :man manual:  User Commands
+ 
