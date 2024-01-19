@@ -3,7 +3,7 @@
 # Depends on:  atk gdk-pixbuf libepoxy pango xorg-libxcomposite xorg-libxcursor xorg-libxi xorg-libxinerama
 
 name=gtk3
-version=3.24.39
+version=3.24.40
 release=1
 source="https://download.gnome.org/sources/gtk+/${version%.*}/gtk+-$version.tar.xz
 	https://github.com/lah7/gtk3-classic/archive/$version/gtk3-classic-$version.tar.gz
