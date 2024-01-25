@@ -11,7 +11,7 @@ WARNING
 	following sequence in order, pausing for several seconds between each
 	key:
 
-		# reisub
+		reisub
 
 POST-INSTALL
 
@@ -21,11 +21,11 @@ POST-INSTALL
 	NOTE: This only applies on ABI changes between major versions e.g.
 	1.16.0 -> 1.17.0.
 
-		# pkgman update -fr $(pkgman list --regex \
+		sudo pkgman update -fr $(pkgman list --regex \
 			--filter='^xorg-xf86-(input|video)|^mesa')
 
 	If you use nvidia you also need to do this:
 
-		# gl-select use xorg  &&  gl-select use nvidia
+		sudo gl-select use xorg  &&  sudo gl-select use nvidia
 
 End of file.
