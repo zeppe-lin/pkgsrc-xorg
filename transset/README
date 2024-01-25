@@ -15,11 +15,14 @@ CONFIGURATION
 	You can use keyboard or mouse shortcuts to set transparency value to
 	the focused windows.
 
-	~~ Keyboard Bindings ~~
 
+	Keyboard Bindings
+	~~~~~~~~~~~~~~~~~
 	See dwm's config.def.h for example.
 
-	~~ Mouse Bindings ~~
+
+	Mouse Bindings
+	~~~~~~~~~~~~~~
 
 	The "scrollwheel method" can be realized via xbindkeys.  Bind pressing
 	control + scrolling up to "transset -p --inc 0.1" and pressing control
