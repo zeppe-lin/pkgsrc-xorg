@@ -90,6 +90,14 @@ drwxr-xr-x	root/root	usr/share/fonts/TTF/
 -rw-r--r--	root/root	usr/share/fonts/TTF/IBMPlexSansKR-SemiBold.ttf
 -rw-r--r--	root/root	usr/share/fonts/TTF/IBMPlexSansKR-Text.ttf
 -rw-r--r--	root/root	usr/share/fonts/TTF/IBMPlexSansKR-Thin.ttf
+-rw-r--r--	root/root	usr/share/fonts/TTF/IBMPlexSansTC-Bold.ttf
+-rw-r--r--	root/root	usr/share/fonts/TTF/IBMPlexSansTC-ExtraLight.ttf
+-rw-r--r--	root/root	usr/share/fonts/TTF/IBMPlexSansTC-Light.ttf
+-rw-r--r--	root/root	usr/share/fonts/TTF/IBMPlexSansTC-Medium.ttf
+-rw-r--r--	root/root	usr/share/fonts/TTF/IBMPlexSansTC-Regular.ttf
+-rw-r--r--	root/root	usr/share/fonts/TTF/IBMPlexSansTC-SemiBold.ttf
+-rw-r--r--	root/root	usr/share/fonts/TTF/IBMPlexSansTC-Text.ttf
+-rw-r--r--	root/root	usr/share/fonts/TTF/IBMPlexSansTC-Thin.ttf
 -rw-r--r--	root/root	usr/share/fonts/TTF/IBMPlexSansThai-Bold.ttf
 -rw-r--r--	root/root	usr/share/fonts/TTF/IBMPlexSansThai-ExtraLight.ttf
 -rw-r--r--	root/root	usr/share/fonts/TTF/IBMPlexSansThai-Light.ttf
