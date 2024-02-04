@@ -1,9 +1,9 @@
 # Description: XKB keyboard description compiler
-# URL:         http://xorg.freedesktop.org
+# URL:         https://gitlab.freedesktop.org/xorg/app/xkbcomp/
 # Depends on:  xorg-libxkbfile xorg-util-macros
 
 name=xorg-xkbcomp
-version=1.4.6
+version=1.4.7
 release=1
 source=https://www.x.org/releases/individual/app/xkbcomp-$version.tar.xz
 
