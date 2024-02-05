@@ -1,9 +1,9 @@
 # Description: Xlib-based library for common extensions to the X11 protocol
-# URL:         http://xorg.freedesktop.org
+# URL:         https://gitlab.freedesktop.org/xorg/lib/libxext
 # Depends on:  xorg-libx11
 
 name=xorg-libxext
-version=1.3.5
+version=1.3.6
 release=1
 source=https://www.x.org/releases/individual/lib/libXext-$version.tar.xz
 
