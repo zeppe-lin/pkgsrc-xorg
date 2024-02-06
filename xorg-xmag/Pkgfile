@@ -1,0 +1,18 @@
+# Description: Screen magnifier
+# URL:         https://gitlab.freedesktop.org/xorg/app/xmag
+# Depends on:  xorg-libxaw
+
+name=xorg-xmag
+version=1.0.7
+release=1
+source=https://www.x.org/releases/individual/app/xmag-$version.tar.xz
+
+build() {
+	mkdir build; cd build
+
+	../xmag-$version/configure  \
+		--prefix=/usr       \
+
+	make V=1
+	make DESTDIR=$PKG install
+}
