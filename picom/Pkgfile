@@ -1,9 +1,9 @@
 # Description: Compositor for X (xcompmgr-dana & compton fork)
 # URL:         https://github.com/yshui/picom
-# Depends on:  asciidoctor hicolor-icon-theme libconfig libev mesa uthash xorg-libpixman xorg-xcb-util-image xorg-xcb-util-renderutil
+# Depends on:  asciidoctor hicolor-icon-theme libconfig libev mesa uthash xorg-libpixman xorg-xcb-util-image xorg-xcb-util-renderutil libepoxy
 
 name=picom
-version=11.1
+version=11.2
 release=1
 source="https://github.com/yshui/picom/archive/v$version/$name-v$version.tar.gz
 	picom.conf
