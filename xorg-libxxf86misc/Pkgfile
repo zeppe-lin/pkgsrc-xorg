@@ -1,6 +1,8 @@
 # Description: Extension library for the XFree86-Misc X extension (obsolete)
-# URL:         http://xorg.freedesktop.org
+# URL:         UNMAINTAINED
 # Depends on:  xorg-libxext
+
+# https://github.com/zeppe-lin/pkgsrc-xorg/issues/1
 
 name=xorg-libxxf86misc
 version=1.0.4
