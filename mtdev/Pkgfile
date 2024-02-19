@@ -1,10 +1,10 @@
 # Description: Kernel multi-touch transformation library
-# URL:         https://launchpad.net/mtdev
+# URL:         https://bitmath.org/code/mtdev/
 
 name=mtdev
 version=1.1.6
 release=1
-source=http://launchpad.net/mtdev/trunk/$version/+download/mtdev-$version.tar.gz
+source=https://bitmath.org/code/mtdev/mtdev-$version.tar.gz
 
 build() {
 	mkdir build; cd build
