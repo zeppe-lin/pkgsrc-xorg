@@ -1,25 +1,25 @@
-# Description: Termulator emulator for X Windows
+# Description: Terminal emulator for X
 # URL:         https://invisible-island.net/xterm/xterm.html
 # Depends on:  util-linux xorg-font-alias xorg-font-misc-misc xorg-libxaw
 
 name=xterm
-version=389
+version=390
 release=1
-source=https://invisible-mirror.net/archives/$name/$name-$version.tgz
+source=https://invisible-mirror.net/archives/xterm/xterm-$version.tgz
 
 build() {
 	mkdir build; cd build
 
-	../$name-$version/configure                               \
-		--prefix=/usr                                     \
-		--with-app-defaults=/usr/share/X11/app-defaults/  \
-		--disable-nls                                     \
-		--enable-256-color                                \
-		--enable-wide-chars                               \
+	../xterm-$version/configure                              \
+		--prefix=/usr                                    \
+		--with-app-defaults=/usr/share/X11/app-defaults  \
+		--disable-nls                                    \
+		--enable-256-color                               \
+		--enable-wide-chars                              \
 
 	make V=1
 	make install DESTDIR=$PKG
 
 	install -m 0644 -Dt $PKG/usr/share/applications/ \
-		../$name-$version/xterm.desktop
+		../xterm-$version/xterm.desktop
 }
