@@ -1,13 +1,14 @@
 OVERVIEW
 --------
-This directory contains **xorg** pkgsrc collection.  This collection
-contains build scripts and files for the packages required for X
-Window System applications.  Packages in this collection depends
-**only** on the **system** and **core** pkgsrc collections.
+This directory contains **xorg** pkgsrc collection: build scripts and
+files for the packages required for X applications.
+
+Packages in _this_ collection must depend **only** on **system** and
+**core** pkgsrc collections.
 
 This distribution was originally forked from CRUX ports as of version
 3.6 and rewritten in POSIX sh(1p).  Also, the Zeppe-Lin has its own
-criteria for what packages should be in xorg collection.
+criteria for what packages should be in **xorg** collection.
 
 The original sources can be downloaded from:
 1. https://crux.nu/gitweb/?p=ports/xorg.git;a=summary
