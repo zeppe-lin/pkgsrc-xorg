@@ -2,7 +2,7 @@
 # URL:         https://gitlab.freedesktop.org/pixman/pixman
 
 name=xorg-libpixman
-version=0.43.2
+version=0.43.4
 release=1
 source=https://www.x.org/releases/individual/lib/pixman-$version.tar.xz
 
