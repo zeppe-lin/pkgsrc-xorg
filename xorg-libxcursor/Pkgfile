@@ -1,9 +1,9 @@
-# Description: X cursor management library
-# URL:         http://xorg.freedesktop.org
+# Description: Xlib-based Cursor management library
+# URL:         https://gitlab.freedesktop.org/xorg/lib/libxcursor
 # Depends on:  xorg-libxfixes xorg-libxrender
 
 name=xorg-libxcursor
-version=1.2.1
+version=1.2.2
 release=1
 source=https://www.x.org/releases/individual/lib/libXcursor-$version.tar.xz
 
