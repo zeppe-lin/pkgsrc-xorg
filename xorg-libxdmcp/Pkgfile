@@ -1,6 +1,6 @@
 # Description: X Display Manager Control Protocol library
 # URL:         https://gitlab.freedesktop.org/xorg/lib/libxdmcp
-# Depends on:  xorg-xorgproto
+# Depends on:  xorg-util-macros xorg-xorgproto
 
 name=xorg-libxdmcp
 version=1.1.5
