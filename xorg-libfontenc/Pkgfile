@@ -1,9 +1,9 @@
 # Description: X font encoding library
-# URL:         http://xorg.freedesktop.org
-# Depends on:  xorg-xorgproto zlib
+# URL:         https://gitlab.freedesktop.org/xorg/lib/libfontenc
+# Depends on:  xorg-util-macros xorg-xorgproto zlib
 
 name=xorg-libfontenc
-version=1.1.7
+version=1.1.8
 release=1
 source=https://www.x.org/releases/individual/lib/libfontenc-$version.tar.xz
 
