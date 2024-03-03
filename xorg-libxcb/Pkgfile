@@ -1,6 +1,6 @@
 # Description: C interface to the X Window System protocol (Xlib replacement)
 # URL:         https://xcb.freedesktop.org/
-# Depends on:  xorg-libxau xorg-libxdmcp xorg-xcb-proto
+# Depends on:  libxslt xorg-libxau xorg-libxdmcp xorg-xcb-proto
 
 name=xorg-libxcb
 version=1.16.1
