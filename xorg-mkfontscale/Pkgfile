@@ -1,9 +1,9 @@
 # Description: Utilities to create the fonts.scale and fonts.dir index files
-# URL:         http://xorg.freedesktop.org
+# URL:         https://gitlab.freedesktop.org/xorg/app/mkfontscale
 # Depends on:  freetype xorg-libfontenc xorg-libx11
 
 name=xorg-mkfontscale
-version=1.2.2
+version=1.2.3
 release=1
 source=https://www.x.org/releases/individual/app/mkfontscale-$version.tar.xz
 
