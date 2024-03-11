@@ -1,9 +1,9 @@
 # Description: X Athena Widget Set, based on the X Toolkit Intrinsics (Xt) Library
-# URL:         http://xorg.freedesktop.org
+# URL:         https://gitlab.freedesktop.org/xorg/lib/libxaw
 # Depends on:  xorg-libxmu xorg-libxpm
 
 name=xorg-libxaw
-version=1.0.15
+version=1.0.16
 release=1
 source=https://www.x.org/releases/individual/lib/libXaw-$version.tar.xz
 
