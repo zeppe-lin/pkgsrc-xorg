@@ -3,7 +3,7 @@
 # Depends on:  zlib
 
 name=xorg-libpciaccess
-version=0.18
+version=0.18.1
 release=1
 source=https://www.x.org/releases/individual/lib/libpciaccess-$version.tar.xz
 
