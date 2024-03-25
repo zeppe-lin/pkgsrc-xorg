@@ -1,9 +1,9 @@
 # Description: X miscellaneous utility routines library
-# URL:         http://xorg.freedesktop.org
-# Depends on:  xorg-libxext xorg-libxt
+# URL:         https://gitlab.freedesktop.org/xorg/lib/libxmu
+# Depends on:  xorg-libxext xorg-libxt xorg-libx11
 
 name=xorg-libxmu
-version=1.1.4
+version=1.2.0
 release=1
 source=https://www.x.org/releases/individual/lib/libXmu-$version.tar.xz
 
