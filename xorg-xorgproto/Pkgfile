@@ -1,19 +1,19 @@
-# Description: X11 core protocol and extension specs and headers
-# URL:         http://xorg.freedesktop.org
+# Description: X Window System unified protocol definitions
+# URL:         https://gitlab.freedesktop.org/xorg/proto/xorgproto
 
 name=xorg-xorgproto
-version=2023.2
+version=2024.1
 release=1
 source=https://xorg.freedesktop.org/archive/individual/proto/xorgproto-$version.tar.xz
 
 build() {
-	meson build xorgproto-$version  \
-		--prefix=/usr           \
-		--buildtype=plain       \
-		--wrap-mode=nodownload  \
-		-D b_lto=true           \
-		-D b_pie=true           \
-		-D legacy=true          \
+	meson setup build xorgproto-$version  \
+		--prefix=/usr                 \
+		--buildtype=plain             \
+		--wrap-mode=nodownload        \
+		-D b_lto=true                 \
+		-D b_pie=true                 \
+		-D legacy=true                \
 
 	ninja -C build -j ${JOBS:-1} -v
 	DESTDIR=$PKG ninja -C build install
