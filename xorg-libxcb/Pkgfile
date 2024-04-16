@@ -3,7 +3,7 @@
 # Depends on:  libxslt xorg-libxau xorg-libxdmcp xorg-xcb-proto
 
 name=xorg-libxcb
-version=1.16.1
+version=1.17.0
 release=1
 source=https://xorg.freedesktop.org/archive/individual/lib/libxcb-$version.tar.xz
 
