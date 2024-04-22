@@ -1,5 +1,6 @@
 # Description: Patched Iosevka font with Nerd Glyphs
 # URL:         https://github.com/ryanoasis/nerd-fonts
+# Maintainer:  UNMAINTAINED
 # Depends on:  git
 
 name=ttf-font-iosevka-nerd
