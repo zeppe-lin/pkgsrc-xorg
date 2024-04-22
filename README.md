@@ -3,7 +3,7 @@ OVERVIEW
 This directory contains **xorg** pkgsrc collection: build scripts and
 files for the packages required for X applications.
 
-Packages in _this_ collection must depend **only** on **system** and
+Packages in this collection must depend **only** on **system** and
 **core** pkgsrc collections.
 
 This distribution was originally forked from CRUX ports as of version
