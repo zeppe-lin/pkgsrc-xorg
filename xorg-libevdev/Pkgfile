@@ -1,8 +1,8 @@
-# Description: Wrapper library for evdev devices
-# URL:         http://xorg.freedesktop.org
+# Description: Wrapper library for evdev input devices
+# URL:         https://gitlab.freedesktop.org/libevdev/libevdev
 
 name=xorg-libevdev
-version=1.13.1
+version=1.13.2
 release=1
 source=https://www.freedesktop.org/software/libevdev/libevdev-$version.tar.xz
 
