@@ -3,12 +3,12 @@
 # Depends on:  libdrm libglvnd xorg-libxfixes
 
 name=libva
-version=2.21.0
+version=2.22.0
 release=1
 source=https://github.com/intel/libva/archive/$version/libva-$version.tar.gz
 
 build() {
-	if pkgman isinst wayland-protocols >/dev/null 2>&1; then
+	if pkgman isinst wayland-protocols; then
 		PKGMK_LIBVA="$PKGMK_LIBVA --disable-x11"
 		PKGMK_LIBVA="$PKGMK_LIBVA --enable-wayland"
 	else
