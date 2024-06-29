@@ -3,7 +3,7 @@
 # Depends on:  xorg-libxft
 
 name=pango
-version=1.52.2
+version=1.54.0
 release=1
 source="https://gitlab.gnome.org/GNOME/pango/-/archive/$version/pango-$version.tar.gz
 	no-fribidi.patch"
@@ -19,6 +19,8 @@ build() {
 		-D b_lto=true              \
 		-D b_pie=true              \
 		-D introspection=disabled  \
+		-D build-testsuite=false   \
+		-D build-examples=false    \
 
 	ninja -C build -j ${JOBS:-1} -v
 	DESTDIR=$PKG ninja -C build install
