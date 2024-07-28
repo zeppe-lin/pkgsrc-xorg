@@ -4,9 +4,9 @@
 
 name=gtk3
 version=3.24.43
-release=1
+release=2
 source="https://download.gnome.org/sources/gtk+/${version%.*}/gtk+-$version.tar.xz
-	https://github.com/lah7/gtk3-classic/archive/$version/gtk3-classic-$version.tar.gz
+	https://github.com/lah7/gtk3-classic/archive/$version/gtk3-classic-$version-2.tar.gz
 	gtk.immodules gtk-register-3.sh
 	no-fribidi.patch"
 
