@@ -1,9 +1,9 @@
 # Description: X font handling library version 2 for server & utilities
-# URL:         http://xorg.freedesktop.org
+# URL:         https://gitlab.freedesktop.org/xorg/lib/libxfont
 # Depends on:  bzip2 freetype xorg-libfontenc xorg-xtrans
 
 name=xorg-libxfont2
-version=2.0.6
+version=2.0.7
 release=1
 source=https://www.x.org/releases/individual/lib/libXfont2-$version.tar.xz
 
