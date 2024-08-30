@@ -1,5 +1,5 @@
 # Description: X server & client startup utilities (includes startx)
-# URL:         http://xorg.freedesktop.org
+# URL:         https://gitlab.freedesktop.org/xorg/app/xinit
 # Depends on:  xorg-server
 
 name=xorg-xinit

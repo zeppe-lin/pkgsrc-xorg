@@ -1,5 +1,5 @@
 # Description: Shared memory 'SyncFence' synchronization primitive
-# URL:         http://xorg.freedesktop.org
+# URL:         https://gitlab.freedesktop.org/xorg/lib/libxshmfence
 # Depends on:  xorg-util-macros xorg-xorgproto
 
 name=xorg-libxshmfence

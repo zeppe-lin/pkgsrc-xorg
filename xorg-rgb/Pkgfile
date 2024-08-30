@@ -1,5 +1,5 @@
 # Description: X color name database & tools
-# URL:         http://xorg.freedesktop.org
+# URL:         https://gitlab.freedesktop.org/xorg/app/rgb
 # Depends on:  xorg-xorgproto
 
 name=xorg-rgb

@@ -1,5 +1,5 @@
-# Description: Xlib API for Xinerama extension to the X11 protocol
-# URL:         http://xorg.freedesktop.org
+# Description: Xlib API for Xinerama extension to the X11 Protocol
+# URL:         https://gitlab.freedesktop.org/xorg/lib/libxinerama
 # Depends on:  xorg-libxext
 
 name=xorg-libxinerama

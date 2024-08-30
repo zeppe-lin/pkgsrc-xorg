@@ -1,5 +1,5 @@
 # Description: Generic VESA video driver for the Xorg X server
-# URL:         http://xorg.freedesktop.org
+# URL:         https://gitlab.freedesktop.org/xorg/driver/xf86-video-vesa
 # Depends on:  xorg-server
 
 name=xorg-xf86-video-vesa

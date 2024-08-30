@@ -1,5 +1,5 @@
-# Description: Xlib-based library for the XFree86-DGA (Direct Graphics Access) extension
-# URL:         http://xorg.freedesktop.org
+# Description: Xlib-based library for the XFree86-DGA extension
+# URL:         https://gitlab.freedesktop.org/xorg/lib/libxxf86dga
 # Depends on:  xorg-libxext
 
 name=xorg-libxxf86dga

@@ -1,5 +1,5 @@
 # Description: Root window parameter setting utility for X
-# URL:         http://xorg.freedesktop.org
+# URL:         https://gitlab.freedesktop.org/xorg/app/xsetroot
 # Depends on:  xorg-server xorg-xbitmaps
 
 name=xorg-xsetroot

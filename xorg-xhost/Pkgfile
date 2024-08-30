@@ -1,5 +1,5 @@
 # Description: X server access control program
-# URL:         http://xorg.freedesktop.org
+# URL:         https://gitlab.freedesktop.org/xorg/app/xhost
 # Depends on:  xorg-libxmu
 
 name=xorg-xhost

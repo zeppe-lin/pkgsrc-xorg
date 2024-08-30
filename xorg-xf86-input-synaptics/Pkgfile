@@ -1,5 +1,5 @@
 # Description: Synaptics touchpad driver for the Xorg X server
-# URL:         http://xorg.freedesktop.org
+# URL:         https://gitlab.freedesktop.org/xorg/driver/xf86-input-synaptics
 # Depends on:  xorg-server xorg-libevdev
 
 name=xorg-xf86-input-synaptics

@@ -1,5 +1,5 @@
 # Description: Utility to configure and test XInput devices
-# URL:         http://xorg.freedesktop.org
+# URL:         https://gitlab.freedesktop.org/xorg/app/xinput
 # Depends on:  xorg-libxi xorg-libxinerama xorg-libxrandr
 
 name=xorg-xinput

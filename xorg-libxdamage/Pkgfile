@@ -1,5 +1,5 @@
 # Description: X Damage extension client library
-# URL:         http://xorg.freedesktop.org
+# URL:         https://gitlab.freedesktop.org/xorg/lib/libxdamage
 # Depends on:  xorg-libxfixes
 
 name=xorg-libxdamage

@@ -1,5 +1,5 @@
 # Description: Set keymaps, layouts, and options via the X Keyboard Extension (XKB)
-# URL:         http://xorg.freedesktop.org
+# URL:         https://gitlab.freedesktop.org/xorg/app/setxkbmap
 # Depends on:  xorg-libxkbfile
 
 name=xorg-setxkbmap

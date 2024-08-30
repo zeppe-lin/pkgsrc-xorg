@@ -1,5 +1,5 @@
 # Description: Xlib library for the Render Extension to the X11 protocol
-# URL:         http://xorg.freedesktop.org
+# URL:         https://gitlab.freedesktop.org/xorg/lib/libxrender
 # Depends on:  xorg-libx11
 
 name=xorg-libxrender
@@ -17,5 +17,5 @@ build() {
 	make DESTDIR=$PKG install
 
 	# remove junk
-	rm -r $PKG/usr/share
+	rm -r $PKG/usr/share/doc ; rmdir $PKG/usr/share
 }

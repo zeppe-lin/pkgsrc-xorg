@@ -1,5 +1,5 @@
 # Description: Xlib library for the X Input Extension
-# URL:         http://xorg.freedesktop.org
+# URL:         https://gitlab.freedesktop.org/xorg/lib/libxi
 # Depends on:  libbsd xorg-libxext xorg-libxfixes
 
 name=xorg-libxi

@@ -1,5 +1,6 @@
-# Description: Xorg font font-alias
-# URL:         http://xorg.freedesktop.org
+# Description: X.org font aliases
+# URL:         https://gitlab.freedesktop.org/xorg/font/alias
+# Depends on:  xorg-font-util xorg-util-macros
 
 name=xorg-font-alias
 version=1.0.5

@@ -1,5 +1,5 @@
 # Description: X resource database utility
-# URL:         http://xorg.freedesktop.org
+# URL:         https://gitlab.freedesktop.org/xorg/app/xrdb
 # Depends on:  xorg-libxmu
 
 name=xorg-xrdb

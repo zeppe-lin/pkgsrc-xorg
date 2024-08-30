@@ -1,5 +1,5 @@
 # Description: Utility to print information about windows on an X server
-# URL:         http://xorg.freedesktop.org
+# URL:         https://gitlab.freedesktop.org/xorg/app/xwininfo
 # Depends on:  xorg-libxmu
 
 name=xorg-xwininfo

@@ -1,5 +1,5 @@
-# Description: Xorg configuration files
-# URL:         http://xorg.freedesktop.org
+# Description: Imake configuration files & templates
+# URL:         https://gitlab.freedesktop.org/xorg/util/cf
 # Depends on:  xorg-util-macros
 
 name=xorg-cf-files

@@ -1,5 +1,5 @@
 # Description: Functions for handling Xauthority files and entries
-# URL:         http://xorg.freedesktop.org
+# URL:         https://gitlab.freedesktop.org/xorg/lib/libxau
 # Depends on:  xorg-xorgproto
 
 name=xorg-libxau

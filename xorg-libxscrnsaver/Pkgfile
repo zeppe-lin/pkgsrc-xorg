@@ -1,5 +1,5 @@
 # Description: Xlib-based X11 Screen Saver extension client library
-# URL:         http://xorg.freedesktop.org
+# URL:         https://gitlab.freedesktop.org/xorg/lib/libxscrnsaver
 # Depends on:  xorg-libxext
 
 name=xorg-libxscrnsaver

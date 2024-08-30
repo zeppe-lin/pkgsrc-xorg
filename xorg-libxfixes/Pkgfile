@@ -1,5 +1,5 @@
 # Description: Xlib-based library for the XFIXES Extension
-# URL:         http://xorg.freedesktop.org
+# URL:         https://gitlab.freedesktop.org/xorg/lib/libxfixes
 # Depends on:  xorg-libx11
 
 name=xorg-libxfixes

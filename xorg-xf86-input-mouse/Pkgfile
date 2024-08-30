@@ -1,5 +1,5 @@
 # Description: Mouse input driver for non-Linux platforms for the Xorg X server
-# URL:         http://xorg.freedesktop.org
+# URL:         https://gitlab.freedesktop.org/xorg/driver/xf86-input-mouse
 # Depends on:  xorg-server
 
 name=xorg-xf86-input-mouse

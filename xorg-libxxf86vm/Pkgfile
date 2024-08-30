@@ -1,5 +1,5 @@
 # Description: Xlib-based library for the XFree86-VidMode (Video Mode) extension
-# URL:         http://xorg.freedesktop.org
+# URL:         https://gitlab.freedesktop.org/xorg/lib/libxxf86vm
 # Depends on:  xorg-libxext
 
 name=xorg-libxxf86vm

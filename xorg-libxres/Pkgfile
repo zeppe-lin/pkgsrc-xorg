@@ -1,5 +1,5 @@
 # Description: Xlib-based X-Resource extension client library
-# URL:         http://xorg.freedesktop.org
+# URL:         https://gitlab.freedesktop.org/xorg/lib/libxres
 # Depends on:  xorg-libxext
 
 name=xorg-libxres

@@ -1,5 +1,5 @@
 # Description: Utility to adjust backlight brightness using RandR extension
-# URL:         http://xorg.freedesktop.org
+# URL:         https://gitlab.freedesktop.org/xorg/app/xbacklight
 # Depends on:  xorg-xcb-util
 
 name=xorg-xbacklight

@@ -1,5 +1,5 @@
-# Description: BDF to PCF font file converter
-# URL:         http://xorg.freedesktop.org
+# Description: Convert X font from Bitmap Distribution Format to Portable Compiled Format
+# URL:         https://gitlab.freedesktop.org/xorg/util/bdftopcf
 # Depends on:  harfbuzz xorg-libxfont
 
 name=xorg-bdftopcf

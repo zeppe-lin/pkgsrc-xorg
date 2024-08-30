@@ -1,5 +1,5 @@
-# Description: Xlib-based client library for the Composite extension client library
-# URL:         http://xorg.freedesktop.org
+# Description: Xlib-based client library for the Composite extension to the X11 protocol
+# URL:         https://gitlab.freedesktop.org/xorg/lib/libxcomposite
 # Depends on:  xorg-libxext xorg-libxfixes
 
 name=xorg-libxcomposite

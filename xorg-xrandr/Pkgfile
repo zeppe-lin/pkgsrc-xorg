@@ -1,5 +1,5 @@
-# Description: Resize and rotate utility for X
-# URL:         http://xorg.freedesktop.org
+# Description: Interface to X11 Resize, Rotate, and Reflect (RandR) extension
+# URL:         https://gitlab.freedesktop.org/xorg/app/xrandr
 # Depends on:  xorg-libxrandr
 
 name=xorg-xrandr

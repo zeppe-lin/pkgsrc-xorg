@@ -1,5 +1,5 @@
 # Description: Inter-Client Exchange Library
-# URL:         http://xorg.freedesktop.org
+# URL:         https://gitlab.freedesktop.org/xorg/lib/libice
 # Depends on:  xorg-xorgproto xorg-xtrans
 
 name=xorg-libice

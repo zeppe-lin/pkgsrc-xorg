@@ -1,5 +1,5 @@
-# Description: Library of code to handle network protocol transport
-# URL:         http://xorg.freedesktop.org
+# Description: X Window System Protocols Transport layer shared code
+# URL:         https://gitlab.freedesktop.org/xorg/lib/libxtrans
 # Depends on:  xorg-util-macros
 
 name=xorg-xtrans

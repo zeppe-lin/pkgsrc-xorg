@@ -1,5 +1,5 @@
-# Description: Forcibly terminate X11 clients
-# URL:         http://xorg.freedesktop.org
+# Description: Utility to forcibly terminate X11 clients
+# URL:         https://gitlab.freedesktop.org/xorg/app/xkill
 # Depends on:  libbsd xorg-libxmu
 
 name=xorg-xkill

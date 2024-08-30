@@ -1,5 +1,5 @@
 # Description: Keyboard input driver
-# URL:         http://xorg.freedesktop.org
+# URL:         https://gitlab.freedesktop.org/xorg/driver/xf86-input-keyboard
 # Depends on:  xorg-server
 
 name=xorg-xf86-input-keyboard

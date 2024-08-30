@@ -1,5 +1,5 @@
 # Description: User preference utility for X servers
-# URL:         http://xorg.freedesktop.org
+# URL:         https://gitlab.freedesktop.org/xorg/app/xset
 # Depends on:  xorg-libxmu
 
 name=xorg-xset
