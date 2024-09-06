@@ -2,7 +2,7 @@
 # URL:         https://gitlab.freedesktop.org/libevdev/libevdev
 
 name=xorg-libevdev
-version=1.13.2
+version=1.13.3
 release=1
 source=https://www.freedesktop.org/software/libevdev/libevdev-$version.tar.xz
 
