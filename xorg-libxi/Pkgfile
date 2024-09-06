@@ -3,7 +3,7 @@
 # Depends on:  libbsd xorg-libxext xorg-libxfixes
 
 name=xorg-libxi
-version=1.8.1
+version=1.8.2
 release=1
 source=https://www.x.org/releases/individual/lib/libXi-$version.tar.xz
 
