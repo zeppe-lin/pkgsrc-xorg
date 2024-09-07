@@ -1,0 +1,18 @@
+# Description: Display a message or query in a window
+# URL:         https://gitlab.freedesktop.org/xorg/app/xmessage
+# Depends on:  xorg-libxaw
+
+name=xorg-xmessage
+version=1.0.7
+release=1
+source=https://xorg.freedesktop.org/archive/individual/app/xmessage-$version.tar.xz
+
+build() {
+	mkdir build; cd build
+
+	../xmessage-$version/configure  \
+		--prefix=/usr           \
+
+	make V=1
+	make DESTDIR=$PKG install
+}
