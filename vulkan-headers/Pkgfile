@@ -2,7 +2,7 @@
 # URL:         https://www.khronos.org/vulkan/
 
 name=vulkan-headers
-version=1.3.285
+version=1.3.295
 release=1
 source=$name-$version.tar.gz::https://github.com/KhronosGroup/Vulkan-Headers/archive/refs/tags/v$version.tar.gz
 
