@@ -1,0 +1,32 @@
+# Description: Drop-in replacement for the 'dialog' or 'cdialog' programs
+# URL:         http://xdialog.free.fr/
+# Depends on:  gtk
+
+name=xdialog
+version=2.3.1
+release=1
+#source="http://xdialog.free.fr/Xdialog-$version.tar.bz2
+source="http://www.slackware.com/~alien/slackbuilds/$name/build/Xdialog-$version.tar.bz2
+	xdialog-2.3.1-fprintf.patch
+	xdialog-2.3.1-gtk2.patch"
+
+build() {
+	patch -d Xdialog-$version -p1 -i $SRC/xdialog-2.3.1-fprintf.patch
+	patch -d Xdialog-$version -p1 -i $SRC/xdialog-2.3.1-gtk2.patch
+	
+	mkdir build; cd build
+
+	../Xdialog-$version/configure        \
+		--prefix=/usr                \
+		--mandir=$PKG/usr/share/man  \
+		--with-gtk2                  \
+		--disable-nls                \
+		--disable-gtktest            \
+		--disable-doc                \
+
+	make V=1
+	make prefix=$PKG/usr install
+
+	# remove junk
+	rm -r $PKG/usr/share/doc
+}
