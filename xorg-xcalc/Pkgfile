@@ -1,0 +1,22 @@
+# Description: Scientific calculator for X
+# URL:         https://gitlab.freedesktop.org/xorg/app/xcalc/
+# Depends on:  xorg-libxaw
+
+name=xorg-xcalc
+version=1.1.2
+release=1
+source="https://xorg.freedesktop.org/archive/individual/app/xcalc-$version.tar.xz
+	xcalc.desktop"
+
+build() {
+	mkdir build; cd build
+
+	../xcalc-$version/configure  \
+		--prefix=/usr        \
+
+	make V=1
+	make DESTDIR=$PKG install
+
+	install -m 0644 -D $SRC/xcalc.desktop \
+		$PKG/usr/share/applications/xcalc.desktop
+}
