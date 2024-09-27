@@ -1,4 +1,4 @@
-# Description: Compositor for X (xcompmgr-dana & compton fork)
+# Description: Lightweight compositor for X11 with animation support
 # URL:         https://github.com/yshui/picom
 # Depends on:  asciidoctor hicolor-icon-theme libconfig libepoxy libev mesa uthash xorg-libpixman xorg-xcb-util-image xorg-xcb-util-renderutil
 
