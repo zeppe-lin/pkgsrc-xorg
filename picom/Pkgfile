@@ -3,22 +3,17 @@
 # Depends on:  asciidoctor hicolor-icon-theme libconfig libepoxy libev mesa uthash xorg-libpixman xorg-xcb-util-image xorg-xcb-util-renderutil
 
 name=picom
-version=11.2
+version=12
 release=1
 source="https://github.com/yshui/picom/archive/v$version/$name-v$version.tar.gz
-	picom.conf
-	asciidoctor.patch"
+	picom.conf"
 
 build() {
-	# use available asciidoctor(1) instead of a2x to generate manpages
-	patch -d picom-$version -p6 -i $SRC/asciidoctor.patch
-
 	meson setup build picom-$version   \
 		--prefix=/usr              \
 		--buildtype=plain          \
 		--wrap-mode=nodownload     \
 		-D b_pie=true              \
-		-D config_file=true        \
 		-D dbus=false              \
 		-D modularize=false        \
 		-D opengl=true             \
