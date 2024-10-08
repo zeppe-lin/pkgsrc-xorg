@@ -4,7 +4,7 @@
 
 name=xdialog
 version=2.3.1
-release=1
+release=2
 #source="http://xdialog.free.fr/Xdialog-$version.tar.bz2
 source="http://www.slackware.com/~alien/slackbuilds/$name/build/Xdialog-$version.tar.bz2
 	xdialog-2.3.1-fprintf.patch
@@ -14,6 +14,8 @@ build() {
 	patch -d Xdialog-$version -p1 -i $SRC/xdialog-2.3.1-fprintf.patch
 	patch -d Xdialog-$version -p1 -i $SRC/xdialog-2.3.1-gtk2.patch
 	
+	CFLAGS="$CFLAGS -Wno-incompatible-pointer-types"
+
 	mkdir build; cd build
 
 	../Xdialog-$version/configure        \
