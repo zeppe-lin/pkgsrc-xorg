@@ -1,0 +1,19 @@
+# Description: Python bindings for YAML, using fast libYAML library
+# URL:         https://pyyaml.org/wiki/PyYAML
+# Depends on:  libyaml py3-gpep517
+
+name=py3-yaml
+version=6.0.2
+release=1
+source=https://pypi.org/packages/source/p/pyyaml/pyyaml-$version.tar.gz
+
+build() {
+	cd pyyaml-$version
+
+	gpep517 build-wheel --wheel-dir .dist --output-fd 3 3>&1 >&2
+	/usr/bin/python3 -m installer -d $PKG .dist/*.whl
+
+	/usr/bin/python3     -m compileall $PKG
+	/usr/bin/python3 -O  -m compileall $PKG
+	/usr/bin/python3 -OO -m compileall $PKG
+}
