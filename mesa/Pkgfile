@@ -1,43 +1,92 @@
 # Description: Mesa 3D Graphics Library
 # URL:         https://www.mesa3d.org/
-# Depends on:  elfutils glslang libdrm libglvnd llvm py3-mako xorg-libxdamage xorg-libxrandr xorg-libxshmfence xorg-libxvmc xorg-libxxf86vm libva libvdpau vulkan-loader
+# Depends on:  elfutils glslang libdrm libglvnd llvm py3-mako py3-yaml xorg-libxdamage xorg-libxrandr xorg-libxshmfence xorg-libxvmc xorg-libxxf86vm libva libvdpau vulkan-loader
 # Optional:    libva libvdpau wayland-protocols
 
 name=mesa
-version=24.0.9
+version=24.2.4
 release=1
 source=https://archive.mesa3d.org/mesa-$version.tar.xz
 
 build() {
+	if pkgman isinst directx-headers; then
+		PKGMK_MESA_GALLIUM="${PKGMK_MESA_GALLIUM}d3d12,"
+	fi
+
+	if pkgman isinst libclc; then
+		PKGMK_MESA="$PKGMK_MESA -D gallium-opencl=icd"
+		PKGMK_MESA_GALLIUM="${PKGMK_MESA_GALLIUM}iris,"
+	fi
+
+	if pkgman isinst libclc rust-bindgen; then
+		PKGMK_MESA="$PKGMK_MESA -D gallium-rusticl=true"
+	else
+		PKGMK_MESA="$PKGMK_MESA -D gallium-rusticl=false"
+	fi
+
+	if pkgman isinst libunwind; then
+		PKGMK_MESA="$PKGMK_MESA -D libunwind=enabled"
+	fi
+
+	if pkgman isinst libva; then
+		PKGMK_MESA="$PKGMK_MESA -D gallium-va=enabled"
+	else
+		PKGMK_MESA="$PKGMK_MESA -D gallium-va=disabled"
+	fi
+
 	if pkgman isinst libvdpau ; then
 		PKGMK_MESA="$PKGMK_MESA -D gallium-vdpau=enabled"
 	else
 		PKGMK_MESA="$PKGMK_MESA -D gallium-vdpau=disabled"
 	fi
 
-	# Gallium drivers.
-	# https://cgit.freedesktop.org/mesa/mesa/tree/src/gallium/drivers
-	if pkgman isinst vulkan-loader; then
-		PKGMK_MESA_GALLIUM="zink,"
+	if pkgman isinst lm-sensors; then
+		PKGMK_MESA="$PKGMK_MESA -D lmsensors=enabled"
 	fi
-	PKGMK_MESA_GALLIUM="${PKGMK_MESA_GALLIUM}crocus,iris,nouveau,r300,r600,radeonsi,svga,swrast,virgl,i915"
+
+	if pkgman isinst vulkan-loader; then
+		if pkgman isinst cbindgen rust-bindgen; then
+			PKGMK_MESA_VULKAN_DRIVERS="${PKGMK_MESA_VULKAN_DRIVERS}nouveau,"
+		fi
+
+		if pkgman isinst directx-headers; then
+			PKGMK_MESA_VULKAN_DRIVERS="${PKGMK_MESA_VULKAN_DRIVERS}microsoft-experimental,"
+		fi
+
+		if pkgman isinst glslang; then
+			PKGMK_MESA_VULKAN_DRIVERS="${PKGMK_MESA_VULKAN_DRIVERS}amd,"
+			PKGMK_MESA_VULKAN_LAYERS="${PKGMK_MESA_VULKAN_LAYERS}overlay,"
+		fi
+
+		if pkgman isinst glslang libclc py3-ply lua; then
+			PKGMK_MESA_VULKAN_DRIVERS="${PKGMK_MESA_VULKAN_DRIVERS}intel,"
+			PKGMK_MESA_VULKAN_LAYERS="${PKGMK_MESA_VULKAN_LAYERS}intel-nullhw,"
+		fi
+
+		PKGMK_MESA_VULKAN_DRIVERS="${PKGMK_MESA_VULKAN_DRIVERS}intel_hasvk,swrast,virtio,"
+		PKGMK_MESA_GALLIUM="${PKGMK_MESA_GALLIUM}zink,"
+	fi
+
+	PKGMK_MESA_GALLIUM="${PKGMK_MESA_GALLIUM}crocus,nouveau,r300,r600,radeonsi,svga,swrast,virgl,i915"
 
 	## for future references
 	#if pkgman isinst wayland-protocols; then
-	#   PKGMK_MESA_PLATFORMS="$PKGMK_MESA_PLATFORMS,wayland"
+	#   PKGMK_MESA_PLATFORMS="${PKGMK_MESA_PLATFORMS}wayland,"
 	#else
 	#if pkgman isinst xorg-libxdamage xorg-libxrandr \
 	#	xorg-libxshmfence xorg-libxvmc xorg-libxxf86vm; then
-	#	PKGMK_MESA_PLATFORMS+=',x11'
+	#	PKGMK_MESA_PLATFORMS="${PKGMK_MESA_PLATFORMS}x11,"
 	#fi
+	PKGMK_MESA_PLATFORMS="x11,"
 
 	# fix for glslang 12.3.1
-	sed "/find_program('glslangValidator'/s/glslangValidator/glslang/" \
-		-i mesa-$version/meson.build
+	#sed "/find_program('glslangValidator'/s/glslangValidator/glslang/" \
+	#	-i mesa-$version/meson.build
+	#CFLAGS="$CFLAGS -mtls-dialect=gnu"
+	#CXXFLAGS="$CXXFLAGS -mtls-dialect=gnu"
 
-	CFLAGS="$CFLAGS -mtls-dialect=gnu"
-	CXXFLAGS="$CXXFLAGS -mtls-dialect=gnu"
-	meson setup build mesa-$version $PKGMK_MESA \
+	meson setup build mesa-$version \
+		$PKGMK_MESA \
 		--prefix=/usr \
 		--sysconfdir=/etc \
 		--buildtype=plain \
@@ -54,13 +103,13 @@ build() {
 		-D glx=dri \
 		-D osmesa=true \
 		-D gallium-xa=enabled \
-		-D gallium-drivers=$PKGMK_MESA_GALLIUM \
-		-D platforms=x11 \
+		-D gallium-drivers=${PKGMK_MESA_GALLIUM%,} \
+		-D platforms=${PKGMK_MESA_PLATFORMS%,} \
 		-D shared-glapi=enabled \
-		-D vulkan-drivers=amd,intel \
-		-D vulkan-layers=device-select,intel-nullhw,overlay \
-		-D video-codecs=vc1dec,h264dec,h264enc,h265dec,h265enc \
-		-D glvnd=true
+		-D vulkan-drivers=${PKGMK_MESA_VULKAN_DRIVERS%,} \
+		-D vulkan-layers=${PKGMK_MESA_VULKAN_LAYERS%,} \
+		-D video-codecs=all \
+		-D glvnd=enabled
 
 	ninja -C build -j ${JOBS:-1} -v
 	DESTDIR=$PKG ninja -C build install
