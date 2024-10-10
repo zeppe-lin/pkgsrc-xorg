@@ -3,10 +3,9 @@
 # Depends on:  asciidoctor hicolor-icon-theme libconfig libepoxy libev mesa uthash xorg-libpixman xorg-xcb-util-image xorg-xcb-util-renderutil
 
 name=picom
-version=12.1
+version=12.2
 release=1
-source="https://github.com/yshui/picom/archive/v$version/$name-v$version.tar.gz
-	picom.conf"
+source=https://github.com/yshui/picom/archive/v$version/$name-v$version.tar.gz
 
 build() {
 	meson setup build picom-$version   \
@@ -31,8 +30,7 @@ build() {
 	sed -i 's/^Icon=picom/Icon=compton/' \
 		$PKG/usr/share/applications/picom.desktop
 
-	# install config files
-	install -m 0644 -D $SRC/picom.conf $PKG/etc/xdg/picom.conf
+	# install config file
 	install -m 0644 -D picom-$version/picom.sample.conf \
-		$PKG/etc/xdg/picom.conf.example
+		$PKG/etc/xdg/picom.conf
 }
