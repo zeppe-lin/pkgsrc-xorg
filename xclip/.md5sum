@@ -1,1 +1,9 @@
+835261ef29c18008aefa4ce09fa921e0  0001-Add-f-flags-to-tar.patch
+ce7700f06f8ee410e69746afa44ec691  0002-Correct-spelling-mistakes.patch
+57b154f30ab1f098ad139c3041c3b45d  0003-Avoid-printf-s-NULL.patch
+42ee70ddf152c1fee8bce3142760b2aa  0004-Corrected-URL-to-Freedesktop-clipboard-spec.patch
+0799dfc7db2a990249c2dca1d1fb4452  0005-Update-INSTALL-with-needed-Ubuntu-deps-as-example-46.patch
+346b3153135705544d09567476677192  0006-Fix-typos-49.patch
+aed8d857a7b174025654a1df4e0b5f5d  0007-Prepend-rm-arguments-with-in-xclip-cutfile-44.patch
+97c07eedd0ef65b3ee6078817e7503a9  0008-Fix-uninitialized-variables-causing-segfault.patch
 81e49f56288f299e3389a019f2550ad2  xclip-0.13.tar.gz

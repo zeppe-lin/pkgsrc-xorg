@@ -4,10 +4,23 @@
 
 name=xclip
 version=0.13
-release=1
-source=https://github.com/astrand/xclip/archive/$version/xclip-$version.tar.gz
+release=2
+source="https://github.com/astrand/xclip/archive/$version/xclip-$version.tar.gz
+	0001-Add-f-flags-to-tar.patch
+	0002-Correct-spelling-mistakes.patch
+	0003-Avoid-printf-s-NULL.patch
+	0004-Corrected-URL-to-Freedesktop-clipboard-spec.patch
+	0005-Update-INSTALL-with-needed-Ubuntu-deps-as-example-46.patch
+	0006-Fix-typos-49.patch
+	0007-Prepend-rm-arguments-with-in-xclip-cutfile-44.patch
+	0008-Fix-uninitialized-variables-causing-segfault.patch"
 
 build() {
+	# apply debian patches
+	for f in $SRC/*.patch; do
+		patch -d $name-$version -Np1 -i $f
+	done
+
 	# build in separate dir is broken
 	cd $name-$version
 
