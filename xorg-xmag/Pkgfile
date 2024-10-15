@@ -3,7 +3,7 @@
 # Depends on:  xorg-libxaw
 
 name=xorg-xmag
-version=1.0.7
+version=1.0.8
 release=1
 source=https://www.x.org/releases/individual/app/xmag-$version.tar.xz
 
