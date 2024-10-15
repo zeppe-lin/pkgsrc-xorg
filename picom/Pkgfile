@@ -3,7 +3,7 @@
 # Depends on:  asciidoctor hicolor-icon-theme libconfig libepoxy libev mesa uthash xorg-libpixman xorg-xcb-util-image xorg-xcb-util-renderutil
 
 name=picom
-version=12.2
+version=12.3
 release=1
 source=https://github.com/yshui/picom/archive/v$version/$name-v$version.tar.gz
 
@@ -30,7 +30,7 @@ build() {
 	sed -i 's/^Icon=picom/Icon=compton/' \
 		$PKG/usr/share/applications/picom.desktop
 
-	# install config file
+	# install dist config file
 	install -m 0644 -D picom-$version/picom.sample.conf \
 		$PKG/etc/xdg/picom.conf
 }
