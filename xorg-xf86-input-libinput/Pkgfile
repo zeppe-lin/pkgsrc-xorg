@@ -3,7 +3,7 @@
 # Depends on:  libinput xorg-server
 
 name=xorg-xf86-input-libinput
-version=1.4.0
+version=1.5.0
 release=1
 source=https://www.x.org/releases/individual/driver/${name#*-}-$version.tar.xz
 
