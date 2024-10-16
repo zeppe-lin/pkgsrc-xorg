@@ -1,5 +1,7 @@
 README transset
 
+---
+
 
 REQUIREMENTS
 ============
@@ -22,22 +24,25 @@ focused windows.
 Keyboard Bindings
 -----------------
 
-See dwm's config.def.h for example.
+See dwm's `config.def.h` for example.
 
 
 Mouse Bindings
 --------------
 
-The "scrollwheel method" can be realized via xbindkeys.  Bind pressing control
-+ scrolling up to "transset -p --inc 0.1" and pressing control + scrolling
-down to "transset --min 0.1 -p --dec 0.2".  The "--min"-flag makes sure you'll
+The **scrollwheel method** can be realized via `xbindkeys`.  Bind pressing control
++ scrolling up to `transset -p --inc 0.1` and pressing control + scrolling
+down to `transset --min 0.1 -p --dec 0.2`.  The `--min` flag makes sure you'll
 not be able to make windowses invisible.
 
-	~/.xbindkeysrc:
-	"transset --min 0.1 -p --dec 0.2"
-	control + b:4
-	"transset -p --inc 0.1"
-	control + b:5
+**~/.xbindkeysrc**:
 
+    "transset --min 0.1 -p --dec 0.2"
+    control + b:4
+    "transset -p --inc 0.1"
+    control + b:5
+
+
+---
 
 End of file.
