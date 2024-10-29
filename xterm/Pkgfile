@@ -3,7 +3,7 @@
 # Depends on:  util-linux xorg-font-alias xorg-font-misc-misc xorg-libxaw
 
 name=xterm
-version=394
+version=395
 release=1
 source=https://invisible-mirror.net/archives/xterm/xterm-$version.tgz
 
@@ -20,6 +20,6 @@ build() {
 	make V=1
 	make install DESTDIR=$PKG
 
-	install -m 0644 -Dt $PKG/usr/share/applications/ \
+	install -m 0644 -Dt $PKG/usr/share/applications  \
 		../xterm-$version/xterm.desktop
 }
