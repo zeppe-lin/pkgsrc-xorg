@@ -3,14 +3,11 @@
 # Depends on:  xorg-util-macros
 
 name=xorg-xtrans
-version=1.5.1
-release=2
-source="https://www.x.org/releases/individual/lib/xtrans-$version.tar.xz
-	ae99ac32f61e0db92a45179579030a23fe1b5770.patch"
+version=1.5.2
+release=1
+source=https://www.x.org/releases/individual/lib/xtrans-$version.tar.xz
 
 build() {
-	patch -d xtrans-$version -Np1 -i $SRC/ae99ac32f61e0db92a45179579030a23fe1b5770.patch
-
 	mkdir build; cd build
 
 	../xtrans-$version/configure  \
