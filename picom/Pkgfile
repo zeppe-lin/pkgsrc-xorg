@@ -3,7 +3,7 @@
 # Depends on:  asciidoctor hicolor-icon-theme libconfig libepoxy libev mesa uthash xorg-libpixman xorg-xcb-util-image xorg-xcb-util-renderutil
 
 name=picom
-version=12.3
+version=12.5
 release=1
 source=https://github.com/yshui/picom/archive/v$version/$name-v$version.tar.gz
 
@@ -27,8 +27,7 @@ build() {
 	DESTDIR=$PKG ninja -C build install
 
 	# fix reference to unexistent icon
-	sed -i 's/^Icon=picom/Icon=compton/' \
-		$PKG/usr/share/applications/picom.desktop
+	sed -i '/^Icon=/s/picom/compton/' $PKG/usr/share/applications/*.desktop
 
 	# install dist config file
 	install -m 0644 -D picom-$version/picom.sample.conf \
