@@ -3,9 +3,9 @@
 # Depends on:  xorg-xcb-util
 
 name=xorg-xbacklight
-version=1.2.3
+version=1.2.4
 release=1
-source=https://www.x.org/releases/individual/app/xbacklight-$version.tar.bz2
+source=https://www.x.org/releases/individual/app/xbacklight-$version.tar.xz
 
 build() {
 	mkdir build; cd build
