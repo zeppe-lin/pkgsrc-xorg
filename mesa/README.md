@@ -14,6 +14,13 @@ acceleration for the following drivers:
     usr/lib/dri/radeonsi_drv_video.so
 
 
+REFERENCES
+==========
+
+* Beyond Linux® From Scratch (System V Edition)
+  https://www.linuxfromscratch.org/blfs/view/svn/x/mesa.html
+
+
 ---
 
 End of file.
