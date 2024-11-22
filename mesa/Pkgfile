@@ -4,7 +4,7 @@
 # Optional:    libva libvdpau wayland-protocols
 
 name=mesa
-version=24.2.7
+version=24.3.0
 release=1
 source=https://archive.mesa3d.org/mesa-$version.tar.xz
 
@@ -85,31 +85,30 @@ build() {
 	#CFLAGS="$CFLAGS -mtls-dialect=gnu"
 	#CXXFLAGS="$CXXFLAGS -mtls-dialect=gnu"
 
-	meson setup build mesa-$version \
-		$PKGMK_MESA \
-		--prefix=/usr \
-		--sysconfdir=/etc \
-		--buildtype=plain \
-		--wrap-mode=nodownload \
-		-D b_lto=true \
-		-D b_pie=true \
-		-D dri3=enabled \
-		-D egl=enabled \
-		-D llvm=enabled \
-		-D shared-llvm=enabled \
-		-D gbm=enabled \
-		-D gles1=disabled \
-		-D gles2=enabled \
-		-D glx=dri \
-		-D osmesa=true \
-		-D gallium-xa=enabled \
-		-D gallium-drivers=${PKGMK_MESA_GALLIUM%,} \
-		-D platforms=${PKGMK_MESA_PLATFORMS%,} \
-		-D shared-glapi=enabled \
-		-D vulkan-drivers=${PKGMK_MESA_VULKAN_DRIVERS%,} \
-		-D vulkan-layers=${PKGMK_MESA_VULKAN_LAYERS%,} \
-		-D video-codecs=all \
-		-D glvnd=enabled
+	meson setup build mesa-$version                           \
+		$PKGMK_MESA                                       \
+		--prefix=/usr                                     \
+		--sysconfdir=/etc                                 \
+		--buildtype=plain                                 \
+		--wrap-mode=nodownload                            \
+		-D b_lto=true                                     \
+		-D b_pie=true                                     \
+		-D egl=enabled                                    \
+		-D llvm=enabled                                   \
+		-D shared-llvm=enabled                            \
+		-D gbm=enabled                                    \
+		-D gles1=disabled                                 \
+		-D gles2=enabled                                  \
+		-D glx=dri                                        \
+		-D osmesa=true                                    \
+		-D gallium-xa=enabled                             \
+		-D gallium-drivers=${PKGMK_MESA_GALLIUM%,}        \
+		-D platforms=${PKGMK_MESA_PLATFORMS%,}            \
+		-D shared-glapi=enabled                           \
+		-D vulkan-drivers=${PKGMK_MESA_VULKAN_DRIVERS%,}  \
+		-D vulkan-layers=${PKGMK_MESA_VULKAN_LAYERS%,}    \
+		-D video-codecs=all                               \
+		-D glvnd=enabled                                  \
 
 	ninja -C build -j ${JOBS:-1} -v
 	DESTDIR=$PKG ninja -C build install
