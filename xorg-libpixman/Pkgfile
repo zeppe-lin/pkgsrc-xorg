@@ -2,12 +2,12 @@
 # URL:         https://gitlab.freedesktop.org/pixman/pixman
 
 name=xorg-libpixman
-version=0.44.0
+version=0.44.2
 release=1
 source=https://www.x.org/releases/individual/lib/pixman-$version.tar.xz
 
 build() {
-	# -D gtk=disabled: disable demos using GTK
+	# -D gtk=disabled: disable demos using GTK+
 	# -D libpng=disabled: disable using libpng
 	meson setup build pixman-$version  \
 		--prefix=/usr              \
