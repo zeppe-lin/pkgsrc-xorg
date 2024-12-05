@@ -20,12 +20,10 @@ CONFIGURATION
 You can use keyboard or mouse shortcuts to set transparency value to the
 focused windows.
 
-
 Keyboard Bindings
 -----------------
 
 See dwm's `config.def.h` for example.
-
 
 Mouse Bindings
 --------------
