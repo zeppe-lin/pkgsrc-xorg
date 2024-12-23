@@ -3,7 +3,7 @@
 # Depends on:  util-linux xorg-libice
 
 name=xorg-libsm
-version=1.2.4
+version=1.2.5
 release=1
 source=https://www.x.org/releases/individual/lib/libSM-$version.tar.xz
 
