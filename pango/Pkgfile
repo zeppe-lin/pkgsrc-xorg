@@ -1,6 +1,6 @@
 # Description: Library for layout and rendering of text
 # URL:         https://pango.gnome.org/
-# Depends on:  xorg-libxft
+# Depends on:  fribidi xorg-libxft
 
 name=pango
 version=1.55.5
