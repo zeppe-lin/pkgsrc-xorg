@@ -3,15 +3,11 @@
 # Depends on:  xorg-libxft
 
 name=pango
-version=1.55.0
+version=1.55.5
 release=1
-source="https://gitlab.gnome.org/GNOME/pango/-/archive/$version/pango-$version.tar.gz
-	no-fribidi.patch"
+source=https://gitlab.gnome.org/GNOME/pango/-/archive/$version/pango-$version.tar.gz
 
 build() {
-	# Remove fribidi dependency.
-	patch -d pango-$version -p1 -i $SRC/no-fribidi.patch
-
 	meson build pango-$version         \
 		--prefix=/usr              \
 		--buildtype=plain          \
