@@ -7,11 +7,11 @@ REQUIREMENTS
 ============
 
 First of all, for transparency to work in X you have to have X-server with
-XComposite extension working.  transset is not a program that creates
+XComposite extension working.  `transset` is not a program that creates
 transparency, it's a program that sets properties for windowses.  These
 properties must then be supported by the underlaying X-server.
 
-Use picom as composite manager, for example.
+Use `picom` as composite manager, for example.
 
 
 CONFIGURATION
