@@ -35,10 +35,12 @@ not be able to make windowses invisible.
 
 **~/.xbindkeysrc**:
 
-    "transset --min 0.1 -p --dec 0.2"
-    control + b:4
-    "transset -p --inc 0.1"
-    control + b:5
+```
+"transset --min 0.1 -p --dec 0.2"
+control + b:4
+"transset -p --inc 0.1"
+control + b:5
+```
 
 
 ---

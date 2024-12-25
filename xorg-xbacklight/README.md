@@ -3,24 +3,30 @@ README xorg-xbacklight
 ---
 
 
-Troubleshooting: No outputs have backlight property
-===================================================
+TROUBLESHOOTING
+===============
 
-If you get **No outputs have backlight property** error, it is because
-xrandr/xbacklight does not choose the right directory in `/sys/class/backlight`.
-You can specify the directory by setting the **Backlight** option of the device
-section in `/etc/X11/xorg.conf.d/20-video.conf`.
+No outputs have backlight property
+----------------------------------
+
+If you get **''No outputs have backlight property''** error, it is because
+`xrandr`/`xbacklight` does not choose the right directory in
+`/sys/class/backlight`.  You can specify the directory by setting the
+**Backlight** option of the device section in
+`/etc/X11/xorg.conf.d/20-video.conf`.
 
 For instance, if the name of the directory is **intel_backlight** and using the
 Intel driver, the device section may be configured as follows:
 
 **/etc/X11/xorg.conf.d/20-video.conf:**
 
-    Section "Device"
-        Identifier  "Intel Graphics"
-        Driver      "intel"
-        Option      "Backlight"  "intel_backlight"
-    EndSection
+```xorg.conf
+Section "Device"
+    Identifier  "Intel Graphics"
+    Driver      "intel"
+    Option      "Backlight"  "intel_backlight"
+EndSection
+```
 
 
 ---
