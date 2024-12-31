@@ -17,6 +17,5 @@ build() {
 	make V=1
 	make DESTDIR=$PKG install
 
-	install -m 0644 -D $SRC/xcalc.desktop \
-		$PKG/usr/share/applications/xcalc.desktop
+	install -m 0644 -Dt $PKG/usr/share/applications $SRC/xcalc.desktop
 }
