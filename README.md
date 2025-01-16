@@ -1,7 +1,7 @@
 OVERVIEW
 ========
 
-This directory contains **xorg** pkgsrc collection: build scripts and
+This repository contains **xorg** pkgsrc collection: build scripts and
 files for the packages required for X applications.
 
 Packages in this collection must depend **only** on **system** and
