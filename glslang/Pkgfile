@@ -3,15 +3,15 @@
 # Depends on:  spirv-tools
 
 name=glslang
-version=15.0.0
+version=15.1.0
 release=1
 source=https://github.com/KhronosGroup/$name/archive/$version/$name-sdk-$version.tar.gz
 
 build() {
 	# -D ENABLE_PCH=OFF:
-	#  disable precompiled headers, required for Vulkan updates
+	#    disable precompiled headers, required for Vulkan updates
 	# -D BUILD_EXTERNAL=OFF:
-	#  disable building external dependencies in /External
+	#    disable building external dependencies in /External
 	PKGMK_GLSLANG_CONF="
 		-S $name-$version
 		-G Ninja
