@@ -3,12 +3,12 @@
 # Depends on:  fribidi xorg-libxft
 
 name=pango
-version=1.56.0
+version=1.56.1
 release=1
 source=https://gitlab.gnome.org/GNOME/pango/-/archive/$version/pango-$version.tar.gz
 
 build() {
-	meson build pango-$version         \
+	meson setup build pango-$version   \
 		--prefix=/usr              \
 		--buildtype=plain          \
 		--wrap-mode=nodownload     \
