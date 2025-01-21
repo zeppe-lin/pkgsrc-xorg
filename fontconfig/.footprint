@@ -38,6 +38,8 @@ drwxr-xr-x	root/root	etc/fonts/conf.avail/
 -rw-r--r--	root/root	etc/fonts/conf.avail/65-khmer.conf
 -rw-r--r--	root/root	etc/fonts/conf.avail/65-nonlatin.conf
 -rw-r--r--	root/root	etc/fonts/conf.avail/69-unifont.conf
+-rw-r--r--	root/root	etc/fonts/conf.avail/70-no-bitmaps-and-emoji.conf
+-rw-r--r--	root/root	etc/fonts/conf.avail/70-no-bitmaps-except-emoji.conf
 -rw-r--r--	root/root	etc/fonts/conf.avail/70-no-bitmaps.conf
 -rw-r--r--	root/root	etc/fonts/conf.avail/70-yes-bitmaps.conf
 -rw-r--r--	root/root	etc/fonts/conf.avail/80-delicious.conf
@@ -85,9 +87,9 @@ drwxr-xr-x	root/root	usr/include/fontconfig/
 -rw-r--r--	root/root	usr/include/fontconfig/fontconfig.h
 drwxr-xr-x	root/root	usr/lib/
 -rwxr-xr-x	root/root	usr/lib/libfontconfig.la
-lrwxrwxrwx	root/root	usr/lib/libfontconfig.so -> libfontconfig.so.1.12.1
-lrwxrwxrwx	root/root	usr/lib/libfontconfig.so.1 -> libfontconfig.so.1.12.1
--rwxr-xr-x	root/root	usr/lib/libfontconfig.so.1.12.1
+lrwxrwxrwx	root/root	usr/lib/libfontconfig.so -> libfontconfig.so.1.15.0
+lrwxrwxrwx	root/root	usr/lib/libfontconfig.so.1 -> libfontconfig.so.1.15.0
+-rwxr-xr-x	root/root	usr/lib/libfontconfig.so.1.15.0
 drwxr-xr-x	root/root	usr/lib/pkgconfig/
 -rw-r--r--	root/root	usr/lib/pkgconfig/fontconfig.pc
 drwxr-xr-x	root/root	usr/share/
@@ -140,6 +142,8 @@ drwxr-xr-x	root/root	usr/share/man/man3/
 -rw-r--r--	root/root	usr/share/man/man3/FcCharSetSubtract.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/FcCharSetSubtractCount.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/FcCharSetUnion.3.gz
+-rw-r--r--	root/root	usr/share/man/man3/FcConfigAcceptFilter.3.gz
+-rw-r--r--	root/root	usr/share/man/man3/FcConfigAcceptFont.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/FcConfigAppFontAddDir.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/FcConfigAppFontAddFile.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/FcConfigAppFontClear.3.gz
@@ -167,6 +171,7 @@ drwxr-xr-x	root/root	usr/share/man/man3/
 -rw-r--r--	root/root	usr/share/man/man3/FcConfigParseAndLoadFromMemory.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/FcConfigReference.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/FcConfigSetCurrent.3.gz
+-rw-r--r--	root/root	usr/share/man/man3/FcConfigSetFontSetFilter.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/FcConfigSetRescanInterval.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/FcConfigSetSysRoot.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/FcConfigSubstitute.3.gz

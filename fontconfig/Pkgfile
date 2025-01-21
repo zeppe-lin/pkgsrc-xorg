@@ -3,7 +3,7 @@
 # Depends on:  expat freetype
 
 name=fontconfig
-version=2.15.0
+version=2.16.0
 release=1
 source=https://fontconfig.org/release/$name-$version.tar.xz
 
@@ -26,6 +26,6 @@ build() {
 		$PKG/etc/fonts/conf.d/10-autohint.conf
 
 	# remove junk
-	rm -f $PKG/etc/fonts/conf.d/README
+	rm $PKG/etc/fonts/conf.d/README
 	rm -r $PKG/usr/share/doc $PKG/usr/share/gettext
 }
