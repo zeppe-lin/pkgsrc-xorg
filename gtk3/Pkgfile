@@ -3,9 +3,9 @@
 # Depends on:  atk gdk-pixbuf libepoxy pango xorg-libxcomposite xorg-libxcursor xorg-libxi xorg-libxinerama
 
 name=gtk3
-version=3.24.43
-release=2
-source="https://download.gnome.org/sources/gtk+/${version%.*}/gtk+-$version.tar.xz
+version=3.24.48
+release=1
+source="https://gitlab.gnome.org/GNOME/gtk/-/archive/$version/gtk-$version.tar.gz
 	https://github.com/lah7/gtk3-classic/archive/$version/gtk3-classic-$version-2.tar.gz
 	gtk.immodules gtk-register-3.sh
 	no-fribidi.patch"
@@ -16,37 +16,36 @@ build() {
 	else
 		PKGMK_GTK3="$PKGMK_GTK3 -D colord=no"
 	fi
+
 	if pkgman isinst libxkbcommon wayland-protocols; then
 		PKGMK_GTK3="$PKGMK_GTK3 -D wayland_backend=true"
 	else
 		PKGMK_GTK3="$PKGMK_GTK3 -D wayland_backend=false"
 	fi
 
-	# provide a more traditional experience (gtk3-classic patchset)
-	while read -r _PATCH; do
+	# gtk3-classic patchset provides more traditional experience
+	while read -r _patch; do
 		# skip comments and newlines
-		case $_PATCH in \#*|"") continue ;; esac
-
-		patch -d gtk+-$version -p1 \
-			-i $SRC/gtk3-classic-$version/$_PATCH
-	done < $SRC/gtk3-classic-$version/series
+		case $_patch in \#*|"") continue ;; esac
+		patch -d gtk-$version -Np1 -i $SRC/gtk3-classic-$version/$_patch
+	done < gtk3-classic-$version/series
 
 	# remove error on array-bounds
-	sed -i '/array-bounds/d' gtk+-$version/meson.build
+	sed -i '/array-bounds/d' gtk-$version/meson.build
 
 	# remove fribidi dependency
-	patch -p1 -d gtk+-$version -i $SRC/no-fribidi.patch
+	patch -d gtk-$version -Np1 -i $SRC/no-fribidi.patch
 
 	# remove atk-bridge dependency which removes the dbus dependency
-	sed -i '/atk-bridge-2/d' gtk+-$version/meson.build
+	sed -i '/atk-bridge-2/d' gtk-$version/meson.build
 	sed -i '/<atk-bridge.h>/d;/atk_bridge_adaptor_init/d' \
-		gtk+-$version/gtk/a11y/gtkaccessibility.c
+		gtk-$version/gtk/a11y/gtkaccessibility.c
 
 	# remove i18n
-	sed -i "/^subdir('po')/d" gtk+-$version/meson.build
-	sed -i "/^subdir('po-properties')/d" gtk+-$version/meson.build
+	sed -i "/^subdir('po')/d"            gtk-$version/meson.build
+	sed -i "/^subdir('po-properties')/d" gtk-$version/meson.build
 
-	meson setup build gtk+-$version  \
+	meson setup build gtk-$version   \
 		--prefix=/usr            \
 		--wrap-mode=nodownload   \
 		-D buildtype=plain       \
