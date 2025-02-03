@@ -3,7 +3,7 @@
 # Depends on:  xorg-libxmu
 
 name=xorg-xhost
-version=1.0.9
+version=1.0.10
 release=1
 source=https://www.x.org/releases/individual/app/xhost-$version.tar.xz
 
@@ -12,6 +12,7 @@ build() {
 
 	../xhost-$version/configure  \
 		--prefix=/usr        \
+		--enable-ipv6        \
 
 	make V=1
 	make DESTDIR=$PKG install
