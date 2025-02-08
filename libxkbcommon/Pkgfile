@@ -4,12 +4,12 @@
 # Optional:    wayland-protocols
 
 name=libxkbcommon
-version=1.7.0
+version=1.8.0
 release=1
 source=https://github.com/xkbcommon/$name/archive/xkbcommon-$version.tar.gz
 
 build() {
-	if pkgman isinst wayland-protocols; then
+	if pkgman isinst wayland-protocols >/dev/null 2>&1; then
 		PKGMK_XKBCOMMON="$PKGMK_XKBCOMMON -D enable-wayland=true"
 	else
 		PKGMK_XKBCOMMON="$PKGMK_XKBCOMMON -D enable-wayland=false"
