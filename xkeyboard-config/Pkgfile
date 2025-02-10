@@ -3,7 +3,7 @@
 # Depends on:  xorg-xkbcomp libxslt
 
 name=xkeyboard-config
-version=2.43
+version=2.44
 release=1
 source=https://www.x.org/releases/individual/data/$name/$name-$version.tar.xz
 
@@ -16,7 +16,7 @@ build() {
 		--wrap-mode=nodownload            \
 		-D b_lto=true                     \
 		-D b_pie=true                     \
-		-D xkb-base="/usr/share/X11/xkb"  \
+		-D xkb-base='/usr/share/X11/xkb'  \
 		-D compat-rules=true              \
 		-D xorg-rules-symlinks=true       \
 
