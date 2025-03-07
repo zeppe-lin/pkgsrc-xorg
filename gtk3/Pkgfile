@@ -3,10 +3,10 @@
 # Depends on:  atk gdk-pixbuf libepoxy pango xorg-libxcomposite xorg-libxcursor xorg-libxi xorg-libxinerama
 
 name=gtk3
-version=3.24.48
+version=3.24.49
 release=1
 source="https://gitlab.gnome.org/GNOME/gtk/-/archive/$version/gtk-$version.tar.gz
-	https://github.com/lah7/gtk3-classic/archive/$version/gtk3-classic-$version-2.tar.gz
+	https://github.com/lah7/gtk3-classic/archive/$version/gtk3-classic-$version.tar.gz
 	gtk.immodules gtk-register-3.sh
 	no-fribidi.patch"
 
