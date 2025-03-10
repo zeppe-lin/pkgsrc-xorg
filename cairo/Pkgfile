@@ -3,7 +3,7 @@
 # Depends on:  fontconfig glib lzo xorg-libpixman xorg-libxext xorg-libxrender
 
 name=cairo
-version=1.18.2
+version=1.18.4
 release=1
 source=https://gitlab.freedesktop.org/cairo/cairo/-/archive/$version/cairo-$version.tar.bz2
 
