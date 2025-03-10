@@ -3,14 +3,14 @@
 # Depends on:  xorg-server
 
 name=xorg-xinit
-version=1.4.3
+version=1.4.4
 release=1
 source=https://www.x.org/releases/individual/app/xinit-$version.tar.xz
 
 build() {
 	# Move startx auth files in /tmp so they are removed on reboot.
 	sed -i 's|xserverauthfile=\$HOME/\.serverauth\.\$\$|xserverauthfile=$(mktemp -p /tmp serverauth.XXXXXXXXXX)|' \
-		xinit-$version/startx.cpp
+		xinit-$version/startx.in
 
 	mkdir build; cd build
 
