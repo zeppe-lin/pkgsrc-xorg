@@ -3,12 +3,12 @@
 # Depends on:  vulkan-headers xorg-libxrandr
 
 name=vulkan-loader
-version=1.4.303
+version=1.4.310
 release=1
 source=$name-$version.tar.gz::https://github.com/KhronosGroup/Vulkan-Loader/archive/refs/tags/v$version.tar.gz
 
 build() {
-	if ! pkgman isinst wayland; then
+	if ! pkgman isinst wayland >/dev/null 2>&1; then
 		PKGMK_VULKAN_LOADER='-D BUILD_WSI_WAYLAND_SUPPORT=OFF'
 	fi
 
