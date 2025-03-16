@@ -3,7 +3,7 @@
 # Depends on:  fribidi xorg-libxft
 
 name=pango
-version=1.56.2
+version=1.56.3
 release=1
 source=https://gitlab.gnome.org/GNOME/pango/-/archive/$version/pango-$version.tar.gz
 
