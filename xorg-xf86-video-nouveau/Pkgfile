@@ -1,0 +1,18 @@
+# Description: Nouveau graphics video driver
+# URL:         https://nouveau.freedesktop.org/wiki/
+# Depends on:  xorg-server
+
+name=xorg-xf86-video-nouveau
+version=1.0.18
+release=1
+source=https://xorg.freedesktop.org/archive/individual/driver/xf86-video-nouveau-$version.tar.xz
+
+build() {
+	mkdir build; cd build
+
+	../xf86-video-nouveau-$version/configure  \
+		--prefix=/usr
+
+	make V=1
+	make DESTDIR=$PKG install
+}
