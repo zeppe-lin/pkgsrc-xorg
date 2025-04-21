@@ -3,7 +3,7 @@
 # Depends on:  util-linux xorg-font-alias xorg-font-misc-misc xorg-libxaw
 
 name=xterm
-version=397
+version=398
 release=1
 source=https://invisible-mirror.net/archives/xterm/xterm-$version.tgz
 
