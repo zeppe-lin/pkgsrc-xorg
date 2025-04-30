@@ -2,15 +2,16 @@
 # URL:         https://spice-space.org/
 
 name=spice-protocol
-version=0.14.4
+version=0.14.5
 release=1
-source=https://spice-space.org/download/releases/$name-$version.tar.xz
+#source=https://spice-space.org/download/releases/$name-$version.tar.xz
+source=https://gitlab.freedesktop.org/spice/$name/-/archive/v$version/$name-v$version.tar.gz
 
 build() {
-	meson setup build $name-$version  \
-		--prefix=/usr             \
-		--buildtype=plain         \
-		--wrap-mode=nodownload    \
+	meson setup build $name-v$version  \
+		--prefix=/usr              \
+		--buildtype=plain          \
+		--wrap-mode=nodownload     \
 
 	DESTDIR=$PKG ninja -C build install
 }
