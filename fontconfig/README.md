@@ -6,24 +6,27 @@ README fontconfig
 POST-INSTALL
 ============
 
-After upgrading `fontconfig`, always build font information cache files by the
-following command (or just enable post-install scripts):
+After upgrading `fontconfig`, rebuild font cache files (executed by
+`post-install` scripts):
 
-```sh
-fc-cache --force --system-only
-```
+    fc-cache --force --system-only
 
-Also, always run `rejmerge` and upgrade `/etc/fonts/fonts.conf` and
-`/etc/fonts/fonts.dtd`.
+Always run `rejmerge` and update:
 
-`/etc/fonts/conf.avail` ships with configuration snippets that can be symlinked
-from `/etc/fonts/conf.d` to enable them.  It's recommended to use these
-snippets instead of duplicating XML code in your `/etc/fonts/local.conf`.
+* `/etc/fonts/fonts.conf`
+* `/etc/fonts/fonts.dtd`
 
-For more information on `conf.avail/conf.d`, please see:
+Configuration snippets in `/etc/fonts/conf.avail` can be symlinked from
+`/etc/fonts/conf.d` instead of duplicating XML code in `/etc/fonts/local.conf`.
+
+
+REFERENCES
+==========
+
+* `conf.avail/conf.d`:
 https://gitlab.freedesktop.org/fontconfig/fontconfig/-/raw/main/conf.d/README.in
 
-For more information on `fontconfig`, please see:
+* `fontconfig`:
 https://www.freedesktop.org/software/fontconfig/fontconfig-user.html
 
 
