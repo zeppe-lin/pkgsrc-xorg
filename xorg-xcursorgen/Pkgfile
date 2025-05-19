@@ -3,7 +3,7 @@
 # Depends on:  libpng xorg-libxcursor
 
 name=xorg-xcursorgen
-version=1.0.8
+version=1.0.9
 release=1
 source=https://www.x.org/releases/individual/app/xcursorgen-$version.tar.xz
 
