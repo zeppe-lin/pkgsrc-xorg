@@ -3,7 +3,7 @@
 # Depends on:  util-linux xorg-font-alias xorg-font-misc-misc xorg-libxaw
 
 name=xterm
-version=398
+version=399
 release=1
 source=https://invisible-mirror.net/archives/xterm/xterm-$version.tgz
 
@@ -18,7 +18,7 @@ build() {
 		--with-app-defaults=/usr/share/X11/app-defaults
 
 	make V=1
-	make install DESTDIR=$PKG
+	make DESTDIR=$PKG install
 
 	install -m 0644 -Dt $PKG/usr/share/applications \
 		../xterm-$version/xterm.desktop
