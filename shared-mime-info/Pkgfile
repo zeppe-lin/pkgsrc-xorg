@@ -21,11 +21,4 @@ build() {
 
 	ninja -C build -j ${JOBS:-1} -v
 	DESTDIR=$PKG ninja -C build install
-
-	# build the initial MIME database
-	/usr/bin/env PKGSYSTEM_ENABLE_FSYNC=0 \
-		$PKG/usr/bin/update-mime-database  $PKG/usr/share/mime
-
-	# fix perms
-	find $PKG/usr/share/mime -type f -exec chmod 0644 {} ';'
 }
