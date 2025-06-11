@@ -4,23 +4,36 @@
 
 name=gtk
 version=2.24.33
-release=2
+release=3
 source="https://download.gnome.org/sources/gtk+/2.24/gtk+-$version.tar.xz
-	gtk.immodules gtk-register.sh"
+	gtkfilechooserdefault.c.patch
+	gtkfilesystemmodel.c.patch
+	gtkpathbar.c.patch
+	gtk.immodules
+	gtk-register.sh"
 
 build() {
 	export LINGUAS=' '
 	export CFLAGS="$CFLAGS -Wno-incompatible-pointer-types"
 
-	(cd gtk+-$version
-	for _F in Makefile.am Makefile.in; do
-		# don't waste time building tests
-		sed -i '/SRC_SUBDIRS/s/tests//g' $_F
-		sed -i '/SUBDIRS/s/tests//g' gdk/$_F gtk/$_F
+	cd gtk+-$version
 
-		# don't waste time building demos
-		sed -i '/SRC_SUBDIRS/s/demos//g' $_F
-	done)
+	# Check for attribute availability before accessing it.
+	# Starting from GLib 2.76, the standard attribute getters in the
+	# GFileInfo object will warn if the attribute is unset, instead of
+	# silently bailing out and returning a default value.
+	patch -Np0 -i $SRC/gtkfilechooserdefault.c.patch
+	patch -Np0 -i $SRC/gtkfilesystemmodel.c.patch
+	patch -Np0 -i $SRC/gtkpathbar.c.patch
+
+	# Skip building tests and demos.
+	for f in Makefile.am Makefile.in; do
+		sed -i '/SRC_SUBDIRS/s/tests//g' $f
+		sed -i '/SUBDIRS/s/tests//g' gdk/$f gtk/$f
+		sed -i '/SRC_SUBDIRS/s/demos//g' $f
+	done
+
+	cd -
 
 	mkdir build; cd build
 
@@ -42,8 +55,7 @@ build() {
 	install -m 0644 -D $SRC/gtk.immodules \
 		$PKG/usr/lib/gtk-2.0/2.10.0/immodules.cache
 
-	install -m 0755 -D $SRC/gtk-register.sh \
-		$PKG/usr/bin/gtk-register
+	install -m 0755 -D $SRC/gtk-register.sh $PKG/usr/bin/gtk-register
 
 	# provided by gtk3
 	rm $PKG/usr/bin/gtk-update-icon-cache

@@ -1,3 +1,6 @@
 0118e98dbe0e4dab90ce475f9f0e6c0c  gtk+-2.24.33.tar.xz
 12d7ce4f0d15ae28c4d1c00ea9cf731e  gtk-register.sh
 866bfb381d103909b253577a92863c57  gtk.immodules
+64a64608c41c6d93ce77bc1344ef6ed8  gtkfilechooserdefault.c.patch
+818fe06eae843b140e4e3b447b8dc29b  gtkfilesystemmodel.c.patch
+61f383c5ef808be2c7f1cdcbfc401f34  gtkpathbar.c.patch
