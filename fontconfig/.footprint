@@ -28,6 +28,7 @@ drwxr-xr-x	root/root	etc/fonts/conf.avail/
 -rw-r--r--	root/root	etc/fonts/conf.avail/40-nonlatin.conf
 -rw-r--r--	root/root	etc/fonts/conf.avail/45-generic.conf
 -rw-r--r--	root/root	etc/fonts/conf.avail/45-latin.conf
+-rw-r--r--	root/root	etc/fonts/conf.avail/48-guessfamily.conf
 -rw-r--r--	root/root	etc/fonts/conf.avail/48-spacing.conf
 -rw-r--r--	root/root	etc/fonts/conf.avail/49-sansserif.conf
 -rw-r--r--	root/root	etc/fonts/conf.avail/50-user.conf
@@ -65,6 +66,7 @@ lrwxrwxrwx	root/root	etc/fonts/conf.d/60-latin.conf -> ../conf.avail/60-latin.co
 lrwxrwxrwx	root/root	etc/fonts/conf.d/65-fonts-persian.conf -> ../conf.avail/65-fonts-persian.conf
 lrwxrwxrwx	root/root	etc/fonts/conf.d/65-nonlatin.conf -> ../conf.avail/65-nonlatin.conf
 lrwxrwxrwx	root/root	etc/fonts/conf.d/69-unifont.conf -> ../conf.avail/69-unifont.conf
+lrwxrwxrwx	root/root	etc/fonts/conf.d/70-no-bitmaps-except-emoji.conf -> ../conf.avail/70-no-bitmaps-except-emoji.conf
 lrwxrwxrwx	root/root	etc/fonts/conf.d/80-delicious.conf -> ../conf.avail/80-delicious.conf
 lrwxrwxrwx	root/root	etc/fonts/conf.d/90-synthetic.conf -> ../conf.avail/90-synthetic.conf
 -rw-r--r--	root/root	etc/fonts/fonts.conf
@@ -87,9 +89,9 @@ drwxr-xr-x	root/root	usr/include/fontconfig/
 -rw-r--r--	root/root	usr/include/fontconfig/fontconfig.h
 drwxr-xr-x	root/root	usr/lib/
 -rwxr-xr-x	root/root	usr/lib/libfontconfig.la
-lrwxrwxrwx	root/root	usr/lib/libfontconfig.so -> libfontconfig.so.1.15.0
-lrwxrwxrwx	root/root	usr/lib/libfontconfig.so.1 -> libfontconfig.so.1.15.0
--rwxr-xr-x	root/root	usr/lib/libfontconfig.so.1.15.0
+lrwxrwxrwx	root/root	usr/lib/libfontconfig.so -> libfontconfig.so.1.16.0
+lrwxrwxrwx	root/root	usr/lib/libfontconfig.so.1 -> libfontconfig.so.1.16.0
+-rwxr-xr-x	root/root	usr/lib/libfontconfig.so.1.16.0
 drwxr-xr-x	root/root	usr/lib/pkgconfig/
 -rw-r--r--	root/root	usr/lib/pkgconfig/fontconfig.pc
 drwxr-xr-x	root/root	usr/share/
@@ -161,6 +163,7 @@ drwxr-xr-x	root/root	usr/share/man/man3/
 -rw-r--r--	root/root	usr/share/man/man3/FcConfigGetConfigDirs.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/FcConfigGetConfigFiles.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/FcConfigGetCurrent.3.gz
+-rw-r--r--	root/root	usr/share/man/man3/FcConfigGetDefaultLangs.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/FcConfigGetFilename.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/FcConfigGetFontDirs.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/FcConfigGetFonts.3.gz
@@ -169,8 +172,10 @@ drwxr-xr-x	root/root	usr/share/man/man3/
 -rw-r--r--	root/root	usr/share/man/man3/FcConfigHome.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/FcConfigParseAndLoad.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/FcConfigParseAndLoadFromMemory.3.gz
+-rw-r--r--	root/root	usr/share/man/man3/FcConfigPreferAppFont.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/FcConfigReference.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/FcConfigSetCurrent.3.gz
+-rw-r--r--	root/root	usr/share/man/man3/FcConfigSetDefaultSubstitute.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/FcConfigSetFontSetFilter.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/FcConfigSetRescanInterval.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/FcConfigSetSysRoot.3.gz
@@ -205,6 +210,7 @@ drwxr-xr-x	root/root	usr/share/man/man3/
 -rw-r--r--	root/root	usr/share/man/man3/FcFontSetSort.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/FcFontSetSortDestroy.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/FcFontSort.3.gz
+-rw-r--r--	root/root	usr/share/man/man3/FcFontationsQueryAll.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/FcFreeTypeCharIndex.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/FcFreeTypeCharSet.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/FcFreeTypeCharSetAndSpacing.3.gz
