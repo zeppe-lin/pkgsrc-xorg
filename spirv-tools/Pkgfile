@@ -3,7 +3,7 @@
 # Depends on:  spirv-headers
 
 name=spirv-tools
-version=1.4.309.0
+version=1.4.321.0
 release=1
 source=https://github.com/KhronosGroup/SPIRV-Tools/archive/vulkan-sdk-$version/SPIRV-Tools-v$version.tar.gz
 
