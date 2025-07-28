@@ -1,9 +1,9 @@
 # Description: Display information utility for X
 # URL:         https://gitlab.freedesktop.org/xorg/app/xdpyinfo
-# Depends on:  xorg-libxcomposite xorg-libxinerama xorg-libxrender xorg-libxtst xorg-libxxf86vm
+# Depends on:  xorg-libxcomposite xorg-libxinerama xorg-libxpresent xorg-libxtst xorg-libxxf86dga xorg-libxxf86vm
 
 name=xorg-xdpyinfo
-version=1.3.4
+version=1.4.0
 release=1
 source=https://xorg.freedesktop.org/archive/individual/app/xdpyinfo-$version.tar.xz
 
@@ -12,6 +12,8 @@ build() {
 
 	../xdpyinfo-$version/configure  \
 		--prefix=/usr           \
+		--with-xinerama         \
+		--with-dmx              \
 
 	make V=1
 	make DESTDIR=$PKG install
