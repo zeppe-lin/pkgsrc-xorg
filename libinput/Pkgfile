@@ -4,7 +4,7 @@
 # Optional:    wayland-protocols
 
 name=libinput
-version=1.28.1
+version=1.29.0
 release=1
 source=https://gitlab.freedesktop.org/$name/$name/-/archive/$version/$name-$version.tar.bz2
 
@@ -20,6 +20,7 @@ build() {
 		-D debug-gui=false      \
 		-D documentation=false  \
 		-D libwacom=false       \
+		-D mtdev=true           \
 		-D tests=false          \
 		-D install-tests=false  \
 		-D zshcompletiondir=no  \
