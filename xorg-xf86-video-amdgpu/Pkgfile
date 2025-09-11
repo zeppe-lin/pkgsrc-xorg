@@ -3,19 +3,22 @@
 # Depends on:  xorg-server
 
 name=xorg-xf86-video-amdgpu
-version=23.0.0
+version=25.0.0
 release=1
-source=https://www.x.org/archive/individual/driver/${name#*-}-$version.tar.gz
+source=https://www.x.org/archive/individual/driver/${name#*-}-$version.tar.xz
 
 build() {
-	mkdir build; cd build
+	# -D udev=enabled: Enable libudev support
+	# -D glamor=enabled: Enable glamor acceleration
+	meson setup build xf86-video-amdgpu-$version  \
+		--prefix=/usr                         \
+		--buildtype=plain                     \
+		--wrap-mode=nodownload                \
+		-D b_lto=true                         \
+		-D b_pie=true                         \
+		-D udev=enabled                       \
+		-D glamor=enabled                     \
 
-	../${name#*-}-$version/configure  \
-		--prefix=/usr             \
-		--enable-static           \
-		--enable-udev             \
-		--enable-glamor           \
-
-	make V=1 CFLAGS="$CFLAGS -fcommon"
-	make DESTDIR=$PKG install
+	ninja -C build -j ${JOBS:-1} -v
+	DESTDIR=$PKG ninja -C build install
 }

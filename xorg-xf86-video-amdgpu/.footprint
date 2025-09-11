@@ -3,8 +3,6 @@ drwxr-xr-x	root/root	usr/lib/
 drwxr-xr-x	root/root	usr/lib/xorg/
 drwxr-xr-x	root/root	usr/lib/xorg/modules/
 drwxr-xr-x	root/root	usr/lib/xorg/modules/drivers/
--rw-r--r--	root/root	usr/lib/xorg/modules/drivers/amdgpu_drv.a
--rwxr-xr-x	root/root	usr/lib/xorg/modules/drivers/amdgpu_drv.la
 -rwxr-xr-x	root/root	usr/lib/xorg/modules/drivers/amdgpu_drv.so
 drwxr-xr-x	root/root	usr/share/
 drwxr-xr-x	root/root	usr/share/X11/
