@@ -3,16 +3,18 @@
 # Depends on:  xorg-libxext
 
 name=xorg-libxres
-version=1.2.2
+version=1.2.3
 release=1
 source=https://www.x.org/releases/individual/lib/libXres-$version.tar.xz
 
 build() {
-	mkdir build; cd build
+	meson setup build libXres-$version  \
+		--prefix=/usr               \
+		--buildtype=plain           \
+		--wrap-mode=nodownload      \
+		-D b_lto=true               \
+		-D b_pie=true               \
 
-	../libXres-$version/configure  \
-		--prefix=/usr          \
-
-	make V=1
-	make DESTDIR=$PKG install
+	ninja -C build -j ${JOBS:-1} -v
+	DESTDIR=$PKG ninja -C build install
 }
