@@ -34,12 +34,10 @@ drwxr-xr-x	root/root	usr/lib/cmake/
 drwxr-xr-x	root/root	usr/lib/cmake/libxslt/
 -rw-r--r--	root/root	usr/lib/cmake/libxslt/FindGcrypt.cmake
 -rw-r--r--	root/root	usr/lib/cmake/libxslt/libxslt-config.cmake
--rwxr-xr-x	root/root	usr/lib/libexslt.la
 lrwxrwxrwx	root/root	usr/lib/libexslt.so -> libexslt.so.0.8.24
 lrwxrwxrwx	root/root	usr/lib/libexslt.so.0 -> libexslt.so.0.8.24
 -rwxr-xr-x	root/root	usr/lib/libexslt.so.0.8.24
 drwxr-xr-x	root/root	usr/lib/libxslt-plugins/
--rwxr-xr-x	root/root	usr/lib/libxslt.la
 lrwxrwxrwx	root/root	usr/lib/libxslt.so -> libxslt.so.1.1.43
 lrwxrwxrwx	root/root	usr/lib/libxslt.so.1 -> libxslt.so.1.1.43
 -rwxr-xr-x	root/root	usr/lib/libxslt.so.1.1.43
