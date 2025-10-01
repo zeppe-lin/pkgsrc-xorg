@@ -3,17 +3,16 @@
 # Depends on:  cairo libpcre2
 
 name=harfbuzz
-version=12.0.0
+version=12.1.0
 release=1
 source=https://github.com/$name/$name/archive/$version/$name-$version.tar.gz
 
 build() {
-	# Notes:
+	# Build flags:
 	# - graphite2=disabled: avoids texlive/libreoffice dependency on
 	#   system harfbuzz
 	# - docs=disabled: avoids gtk-doc requirement
 	# - glib=enabled: required for building pango
-
 	meson setup build $name-$version   \
 		--prefix=/usr              \
 		--buildtype=plain          \
