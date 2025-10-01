@@ -3,13 +3,13 @@
 # Depends on:  docutils xorg-libpciaccess
 
 name=libdrm
-version=2.4.125
+version=2.4.126
 release=1
 source=https://dri.freedesktop.org/$name/$name-$version.tar.xz
 
 build() {
-	# -D udev=true: enable support for using udev instead of mknod(1)
-	# -D man-pages=enabled: requires docutils
+	# - udev=true: use udev instead of mknod(1)
+	# - man-pages=enabled: requires docutils
 	meson setup build $name-$version        \
 		--prefix=/usr                   \
 		--buildtype=plain               \
