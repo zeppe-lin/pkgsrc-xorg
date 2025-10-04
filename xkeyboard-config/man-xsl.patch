@@ -1,0 +1,56 @@
+--- man.xsl.orig	2025-10-04 07:18:29.150812300 +0300
++++ man.xsl	2025-10-04 07:20:00.583580620 +0300
+@@ -11,8 +11,8 @@
+ Extension (XKB) and for libxkbcommon. Typically it is
+ the task of the desktop environment to apply the
+ requested configuration. Users running an X server can also use the
+-setxkbmap(1) tool to apply keyboard configuration at runtime or configure XKB
+-settings in the xorg.conf(5).
++\fBsetxkbmap\fR(1) tool to apply keyboard configuration at runtime or configure XKB
++settings in the \fBxorg.conf\fR(5).
+ 
+ .SH XKB DATA FILES LOAD PATHS
+ 
+@@ -48,9 +48,9 @@
+ .SH LAYOUTS
+ .TS
+ nowarn,box;
+-lB lB
++lB lxB
+ __
+-lB l.
++lB lx.
+ Layout(Variant)	Description
+ ]]></xsl:text>
+         <xsl:apply-templates select="layoutList"/>
+@@ -81,7 +81,7 @@
+ @xkb_base@/types
+ 
+ .SH SEE ALSO
+-setxkbmap(1)
++\fBsetxkbmap\fR(1)
+ ]]></xsl:text>
+     </xsl:template>
+ 
+@@ -104,17 +104,17 @@
+     <xsl:template match="layoutList">
+         <xsl:for-each select="layout">
+             <xsl:value-of select="configItem/name"/>
+-            <xsl:text>&#9;</xsl:text>
++	    <xsl:text>&#9;T{&#10;</xsl:text>
+             <xsl:value-of select="configItem/description"/>
+-            <xsl:text>&#10;</xsl:text>
++	    <xsl:text>&#10;T}&#10;</xsl:text>
+             <xsl:for-each select="variantList/variant">
+                 <xsl:value-of select="../../configItem/name"/>
+                 <xsl:text>(</xsl:text>
+                 <xsl:value-of select="configItem/name"/>
+                 <xsl:text>)</xsl:text>
+-                <xsl:text>&#9;</xsl:text>
++		<xsl:text>&#9;T{&#10;</xsl:text>
+                 <xsl:value-of select="configItem/description"/>
+-                <xsl:text>&#10;</xsl:text>
++		<xsl:text>&#10;T}&#10;</xsl:text>
+             </xsl:for-each>
+             <xsl:if test="position()!=last()">
+                 <xsl:text>_&#10;</xsl:text>

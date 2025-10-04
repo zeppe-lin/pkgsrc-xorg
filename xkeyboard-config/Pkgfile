@@ -5,9 +5,11 @@
 name=xkeyboard-config
 version=2.46
 release=1
-source=https://www.x.org/releases/individual/data/$name/$name-$version.tar.xz
+source="https://www.x.org/releases/individual/data/$name/$name-$version.tar.xz
+	man-xsl.patch"
 
 build() {
+	patch -d $name-$version/man -Np0 -i $SRC/man-xsl.patch
 	sed -i "/^subdir('po')/d" $name-$version/meson.build
 
 	meson build $name-$version                \
