@@ -3,16 +3,19 @@
 # Depends on:  spirv-tools
 
 name=glslang
-version=15.2.0
+version=16.0.0
 release=1
 source=https://github.com/KhronosGroup/$name/archive/$version/$name-sdk-$version.tar.gz
 
 build() {
-	# -D ENABLE_PCH=OFF:
+	CXXFLAGS="$CXXFLAGS -ffat-lto-objects"
+
+	# Common CMake flags
+	# ENABLE_PCH=OFF:
 	#    disable precompiled headers, required for Vulkan updates
-	# -D BUILD_EXTERNAL=OFF:
+	# BUILD_EXTERNAL=OFF:
 	#    disable building external dependencies in /External
-	PKGMK_GLSLANG_CONF="
+	cmake_flags="
 		-S $name-$version
 		-G Ninja
 		-D CMAKE_INSTALL_PREFIX=/usr
@@ -23,16 +26,16 @@ build() {
 		-D BUILD_EXTERNAL=OFF
 		-D ALLOW_EXTERNAL_SPIRV_TOOLS=ON
 		-Wno-dev"
-	CXXFLAGS="$CXXFLAGS -ffat-lto-objects"
 
-	cmake -B build-static $PKGMK_GLSLANG_CONF \
+	# Static build
+	cmake -B build-static $cmake_flags \
 	      -D BUILD_SHARED_LIBS=OFF \
 	      -D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS"
 	ninja -C build-static -j ${JOBS:-1} -v
 
-	# -Wl,--no-undefined:
-	#  https://github.com/KhronosGroup/glslang/issues/1484
-	cmake -B build-shared $PKGMK_GLSLANG_CONF \
+	# Shared build with -Wl,--no-undefined workaround:
+	# https://github.com/KhronosGroup/glslang/issues/1484
+	cmake -B build-shared $cmake_flags \
 		-D BUILD_SHARED_LIBS=ON \
 		-D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS" \
 		-D CMAKE_SHARED_LINKER_FLAGS='-Wl,--no-undefined'
