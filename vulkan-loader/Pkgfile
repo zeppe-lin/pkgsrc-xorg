@@ -1,9 +1,10 @@
 # Description: Vulkan ICD desktop loader
 # URL:         https://www.khronos.org/vulkan/
 # Depends on:  vulkan-headers xorg-libxrandr
+# Optional:    wayland
 
 name=vulkan-loader
-version=1.4.323
+version=1.4.328
 release=1
 source=$name-$version.tar.gz::https://github.com/KhronosGroup/Vulkan-Loader/archive/refs/tags/v$version.tar.gz
 
