@@ -4,9 +4,20 @@
 # Optional:    wayland
 
 name=vulkan-loader
-version=1.4.328
+version=1.4.328.0
 release=1
-source=$name-$version.tar.gz::https://github.com/KhronosGroup/Vulkan-Loader/archive/refs/tags/v$version.tar.gz
+
+# If version has 3 dots (a.b.c.d), it's a release; otherwise it's a tag
+case $version in
+*.*.*.*)
+	_srcdir="Vulkan-Loader-vulkan-sdk-$version"
+	source=https://github.com/KhronosGroup/Vulkan-Loader/archive/refs/tags/vulkan-sdk-$version.tar.gz
+	;;
+*.*.*)
+	_srcdir="Vulkan-Loader-$version"
+	source=$name-$version.tar.gz::https://github.com/KhronosGroup/Vulkan-Loader/archive/refs/tags/v$version.tar.gz
+	;;
+esac
 
 build() {
 	if ! pkgman isinst wayland >/dev/null 2>&1; then
@@ -15,14 +26,14 @@ build() {
 
 	export CFLAGS="$CFLAGS -ffat-lto-objects"
 
-	cmake -S Vulkan-Loader-$version -B build -G Ninja  \
-		-D CMAKE_INSTALL_PREFIX=/usr               \
-		-D CMAKE_INSTALL_LIBDIR=lib                \
-		-D CMAKE_BUILD_TYPE=Release                \
-		-D CMAKE_C_FLAGS_RELEASE="$CFLAGS"         \
-		-D CMAKE_SKIP_RPATH=ON                     \
-		-D BUILD_TESTS=OFF                         \
-		$PKGMK_VULKAN_LOADER                       \
+	cmake -S ${_srcdir} -B build -G Ninja \
+		-D CMAKE_INSTALL_PREFIX=/usr \
+		-D CMAKE_INSTALL_LIBDIR=lib \
+		-D CMAKE_BUILD_TYPE=Release \
+		-D CMAKE_C_FLAGS_RELEASE="$CFLAGS" \
+		-D CMAKE_SKIP_RPATH=ON \
+		-D BUILD_TESTS=OFF \
+		$PKGMK_VULKAN_LOADER \
 
 	ninja -C build -j ${JOBS:-1} -v
 	DESTDIR=$PKG ninja -C build install
