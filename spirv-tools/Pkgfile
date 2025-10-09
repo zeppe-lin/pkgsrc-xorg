@@ -3,12 +3,15 @@
 # Depends on:  spirv-headers
 
 name=spirv-tools
-version=1.4.328.0
+version=1.4.328.1
 release=1
 source=https://github.com/KhronosGroup/SPIRV-Tools/archive/vulkan-sdk-$version/SPIRV-Tools-v$version.tar.gz
 
 build() {
-	PKGMK_SPIRV_TOOLS="
+	CFLAGS="$CFLAGS -ffat-lto-objects"
+	CXXFLAGS="$CXXFLAGS -ffat-lto-objects"
+
+	cmake_args="
 	-S SPIRV-Tools-vulkan-sdk-$version
 	-G Ninja
 	-D CMAKE_INSTALL_PREFIX=/usr
@@ -20,17 +23,14 @@ build() {
 	-D SPIRV_WERROR=OFF
 	-Wno-dev"
 
-	CFLAGS="$CFLAGS -ffat-lto-objects"
-	CXXFLAGS="$CXXFLAGS -ffat-lto-objects"
-
-	cmake -B build-static $PKGMK_SPIRV_TOOLS     \
-	      -D CMAKE_C_FLAGS_RELEASE="$CFLAGS"     \
+	cmake -B build-static $cmake_args \
+	      -D CMAKE_C_FLAGS_RELEASE="$CFLAGS" \
 	      -D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS" \
 	      -D BUILD_SHARED_LIBS=OFF
 	ninja -C build-static -j ${JOBS:-1} -v
 
-	cmake -B build-shared $PKGMK_SPIRV_TOOLS     \
-	      -D CMAKE_C_FLAGS_RELEASE="$CFLAGS"     \
+	cmake -B build-shared $cmake_args \
+	      -D CMAKE_C_FLAGS_RELEASE="$CFLAGS" \
 	      -D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS" \
 	      -D BUILD_SHARED_LIBS=ON
 	ninja -C build-shared -j ${JOBS:-1} -v
