@@ -3,18 +3,18 @@
 # Depends on:  util-linux xorg-font-alias xorg-font-misc-misc xorg-libxaw
 
 name=xterm
-version=402
+version=403
 release=1
 source=https://invisible-mirror.net/archives/xterm/xterm-$version.tgz
 
 build() {
 	mkdir build; cd build
 
-	../xterm-$version/configure  \
-		--prefix=/usr        \
-		--disable-nls        \
-		--enable-256-color   \
-		--enable-wide-chars  \
+	../xterm-$version/configure \
+		--prefix=/usr \
+		--disable-nls \
+		--enable-256-color \
+		--enable-wide-chars \
 		--with-app-defaults=/usr/share/X11/app-defaults
 
 	make V=1
