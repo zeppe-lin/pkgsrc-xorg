@@ -1,7 +1,9 @@
 # Description: Handle input devices for display servers
 # URL:         https://www.freedesktop.org/wiki/Software/libinput
 # Depends on:  eudev mtdev xorg-libevdev
-# Optional:    wayland-protocols
+
+# Maintainer notes on dependencies:
+#   wayland-protocols: (enabled if installed)
 
 name=libinput
 version=1.30.0

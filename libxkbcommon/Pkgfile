@@ -1,7 +1,9 @@
 # Description: Handle keyboard descriptions
 # URL:         https://xkbcommon.org/
 # Depends on:  xkeyboard-config
-# Optional:    wayland-protocols
+
+# Maintainer notes on dependencies:
+#   wayland-protocols: (enabled if installed)
 
 name=libxkbcommon
 version=1.12.3
