@@ -3,7 +3,7 @@
 # Depends on:  libxml2
 
 name=libxslt
-version=1.1.44
+version=1.1.45
 release=1
 source=https://gitlab.gnome.org/GNOME/$name/-/archive/v$version/$name-v$version.tar.bz2
 
