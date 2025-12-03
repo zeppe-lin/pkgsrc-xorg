@@ -3,18 +3,18 @@
 # Depends on:  spirv-tools
 
 name=glslang
-version=16.0.0
+version=16.1.0
 release=1
 source=https://github.com/KhronosGroup/$name/archive/$version/$name-sdk-$version.tar.gz
 
 build() {
 	CXXFLAGS="$CXXFLAGS -ffat-lto-objects"
 
-	# Common CMake flags
-	# ENABLE_PCH=OFF:
-	#    disable precompiled headers, required for Vulkan updates
-	# BUILD_EXTERNAL=OFF:
-	#    disable building external dependencies in /External
+	# Common CMake flags:
+	#   ENABLE_PCH=OFF:
+	#     disable precompiled headers, required for Vulkan updates
+	#   BUILD_EXTERNAL=OFF:
+	#     disable building external dependencies in /External
 	cmake_flags="
 		-S $name-$version
 		-G Ninja
