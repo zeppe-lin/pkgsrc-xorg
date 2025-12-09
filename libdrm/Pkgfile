@@ -2,15 +2,17 @@
 # URL:         https://gitlab.freedesktop.org/mesa/drm
 # Depends on:  docutils xorg-libpciaccess
 
+# Maintainer notes on dependencies:
+#   man-pages=enabled: Build man pages, needs docutils (enabled)
+#   udev=true: Use udev instead of mknod(1), needs eudev (enabled)
+
 name=libdrm
-version=2.4.129
+version=2.4.130
 release=1
 #source=https://dri.freedesktop.org/$name/$name-$version.tar.gz
 source=https://gitlab.freedesktop.org/mesa/$name/-/archive/$name-$version/$name-$name-$version.tar.gz
 
 build() {
-	# - udev=true: use udev instead of mknod(1)
-	# - man-pages=enabled: build man pages (requires docutils)
 	meson setup build $name-$name-$version \
 		--prefix=/usr \
 		--buildtype=plain \
