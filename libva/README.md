@@ -6,7 +6,8 @@ README libva
 REQUIREMENTS
 ============
 
-Install a backend driver for `libva` to function on your graphics card:
+Install a backend driver for `libva` to function on your graphics
+card:
 
 * `libva-vdpau-driver`:  vdpau back-end for nvidia
 * `libva-intel-driver`:  vdpau back-end for intel
