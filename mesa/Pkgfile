@@ -1,12 +1,12 @@
 # Description: Mesa 3D Graphics Library
 # URL:         https://www.mesa3d.org/
-# Depends on:  elfutils glslang libdrm libglvnd llvm py3-mako py3-yaml xorg-libxdamage xorg-libxrandr xorg-libxshmfence xorg-libxvmc xorg-libxxf86vm libva libvdpau vulkan-loader
+# Depends on:  elfutils glslang libdrm libglvnd llvm py3-mako py3-yaml xorg-libxdamage xorg-libxrandr xorg-libxshmfence xorg-libxvmc xorg-libxxf86vm libva vulkan-loader
 
 # Maintainer notes on dependencies:
-#   libva libvdpau wayland-protocols: (enabled if installed)
+#   libva wayland-protocols: (enabled if installed)
 
 name=mesa
-version=24.3.4
+version=25.3.2
 release=1
 source=https://archive.mesa3d.org/mesa-$version.tar.xz
 
@@ -16,7 +16,6 @@ build() {
 	fi
 
 	if pkgman isinst libclc; then
-		PKGMK_MESA="$PKGMK_MESA -D gallium-opencl=icd"
 		PKGMK_MESA_GALLIUM="${PKGMK_MESA_GALLIUM}iris,"
 	fi
 
@@ -34,12 +33,6 @@ build() {
 		PKGMK_MESA="$PKGMK_MESA -D gallium-va=enabled"
 	else
 		PKGMK_MESA="$PKGMK_MESA -D gallium-va=disabled"
-	fi
-
-	if pkgman isinst libvdpau ; then
-		PKGMK_MESA="$PKGMK_MESA -D gallium-vdpau=enabled"
-	else
-		PKGMK_MESA="$PKGMK_MESA -D gallium-vdpau=disabled"
 	fi
 
 	if pkgman isinst lm-sensors; then
@@ -69,9 +62,9 @@ build() {
 		PKGMK_MESA_GALLIUM="${PKGMK_MESA_GALLIUM}zink,"
 	fi
 
-	PKGMK_MESA_GALLIUM="${PKGMK_MESA_GALLIUM}crocus,nouveau,r300,r600,radeonsi,svga,swrast,virgl,i915"
+	PKGMK_MESA_GALLIUM="${PKGMK_MESA_GALLIUM}crocus,nouveau,r300,r600,radeonsi,svga,virgl,i915"
 
-	## for future references
+	## For future references
 	#if pkgman isinst wayland-protocols; then
 	#   PKGMK_MESA_PLATFORMS="${PKGMK_MESA_PLATFORMS}wayland,"
 	#else
@@ -81,40 +74,39 @@ build() {
 	#fi
 	PKGMK_MESA_PLATFORMS="x11,"
 
-	# fix for glslang 12.3.1
+	# Fix for glslang 12.3.1
 	#sed "/find_program('glslangValidator'/s/glslangValidator/glslang/" \
 	#	-i mesa-$version/meson.build
 	#CFLAGS="$CFLAGS -mtls-dialect=gnu"
 	#CXXFLAGS="$CXXFLAGS -mtls-dialect=gnu"
 
-	meson setup build mesa-$version                           \
-		$PKGMK_MESA                                       \
-		--prefix=/usr                                     \
-		--sysconfdir=/etc                                 \
-		--buildtype=plain                                 \
-		--wrap-mode=nodownload                            \
-		-D b_lto=true                                     \
-		-D b_pie=true                                     \
-		-D egl=enabled                                    \
-		-D llvm=enabled                                   \
-		-D shared-llvm=enabled                            \
-		-D gbm=enabled                                    \
-		-D gles1=disabled                                 \
-		-D gles2=enabled                                  \
-		-D glx=dri                                        \
-		-D osmesa=true                                    \
-		-D gallium-xa=enabled                             \
-		-D gallium-drivers=${PKGMK_MESA_GALLIUM%,}        \
-		-D platforms=${PKGMK_MESA_PLATFORMS%,}            \
-		-D shared-glapi=enabled                           \
-		-D vulkan-drivers=${PKGMK_MESA_VULKAN_DRIVERS%,}  \
-		-D vulkan-layers=${PKGMK_MESA_VULKAN_LAYERS%,}    \
-		-D video-codecs=all                               \
-		-D glvnd=enabled                                  \
+	meson setup build mesa-$version \
+		$PKGMK_MESA \
+		--prefix=/usr \
+		--sysconfdir=/etc \
+		--buildtype=plain \
+		--wrap-mode=nodownload \
+		-D b_lto=true \
+		-D b_pie=true \
+		-D egl=enabled \
+		-D llvm=enabled \
+		-D shared-llvm=enabled \
+		-D gbm=enabled \
+		-D gles1=disabled \
+		-D gles2=enabled \
+		-D glx=dri \
+		-D gallium-drivers=${PKGMK_MESA_GALLIUM%,} \
+		-D platforms=${PKGMK_MESA_PLATFORMS%,} \
+		-D shared-glapi=enabled \
+		-D vulkan-drivers=${PKGMK_MESA_VULKAN_DRIVERS%,} \
+		-D vulkan-layers=${PKGMK_MESA_VULKAN_LAYERS%,} \
+		-D video-codecs=all \
+		-D glvnd=enabled \
+		-D intel-rt=enabled \
 
 	ninja -C build -j ${JOBS:-1} -v
 	DESTDIR=$PKG ninja -C build install
 
-	# indirect rendering symlink
+	# Indirect rendering symlink
 	ln -s libGLX_mesa.so.0 $PKG/usr/lib/libGLX_indirect.so.0
 }
