@@ -2,16 +2,20 @@
 # URL:         https://harfbuzz.github.io/
 # Depends on:  cairo libpcre2
 
+# Maintainer notes on dependencies:
+#   cairo          required (optional upstream, enforced here)
+#   glib           enabled for building pango
+#   graphite2      disabled (graphite2)
+#   icu            disabled (icu)
+#   docs           disabled (gtk-doc)
+#   introspection  disabled (glib-introspection)
+
 name=harfbuzz
-version=12.2.0
+version=12.3.0
 release=1
 source=https://github.com/$name/$name/archive/$version/$name-$version.tar.gz
 
 build() {
-	# - graphite2=disabled: avoids texlive/libreoffice dependency on
-	#   system harfbuzz
-	# - docs=disabled: avoids gtk-doc requirement
-	# - glib=enabled: required for building pango
 	meson setup build $name-$version \
 		--prefix=/usr \
 		--buildtype=plain \
