@@ -3,15 +3,15 @@
 # Depends on:  xorg-cf-files xorg-xorgproto
 
 name=xorg-imake
-version=1.0.10
+version=1.0.11
 release=1
 source=https://www.x.org/releases/individual/util/imake-$version.tar.xz
 
 build() {
 	mkdir build; cd build
 
-	../imake-$version/configure  \
-		--prefix=/usr        \
+	../imake-$version/configure \
+		--prefix=/usr \
 
 	make V=1
 	make DESTDIR=$PKG install
