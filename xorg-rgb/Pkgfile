@@ -3,15 +3,15 @@
 # Depends on:  xorg-xorgproto
 
 name=xorg-rgb
-version=1.1.0
+version=1.1.1
 release=1
 source=https://www.x.org/releases/individual/app/rgb-$version.tar.xz
 
 build() {
 	mkdir build; cd build
 
-	../rgb-$version/configure  \
-		--prefix=/usr      \
+	../rgb-$version/configure \
+		--prefix=/usr \
 
 	make V=1
 	make DESTDIR=$PKG install
