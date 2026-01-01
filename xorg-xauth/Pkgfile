@@ -3,15 +3,15 @@
 # Depends on:  xorg-server
 
 name=xorg-xauth
-version=1.1.4
+version=1.1.5
 release=1
 source=https://www.x.org/releases/individual/app/xauth-$version.tar.xz
 
 build() {
 	mkdir build; cd build
 
-	../xauth-$version/configure  \
-		--prefix=/usr        \
+	../xauth-$version/configure \
+		--prefix=/usr \
 
 	make V=1
 	make DESTDIR=$PKG install
