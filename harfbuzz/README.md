@@ -8,7 +8,10 @@ POST-INSTALL
 
 After `harfbuzz` is installed, rebuild and reinstall `freetype`:
 
-    sudo pkgman update -fr --deps --depsort freetype
+```sh
+# as root
+pkgman update -fr --deps --depsort freetype
+```
 
 
 ---

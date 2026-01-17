@@ -16,19 +16,25 @@ Opening terminal links with the keyboard
 
 Create a script named `urlpick.sh` and place it in your `$PATH`:
 
-    #!/bin/sh
-    perl -MRegexp::Common -lne 'print $1 if /$RE{URI}{-keep}/' |
-        pick | xargs xdg-open
+```sh
+#!/bin/sh
+perl -MRegexp::Common -lne 'print $1 if /$RE{URI}{-keep}/' |
+    pick | xargs xdg-open
+```
 
 Add this to your `.Xresources`:
 
-    XTerm*printerCommand: xterm -T urlpick.sh -e sh -c 'urlpick.sh <&3' 3<&0
-    *VT100*Translations: #override\n\
-        Ctrl Alt <Key>F: print-everything(noAttrs)
+```
+XTerm*printerCommand: xterm -T urlpick.sh -e sh -c 'urlpick.sh <&3' 3<&0
+*VT100*Translations: #override\n\
+    Ctrl Alt <Key>F: print-everything(noAttrs)
+```
 
 Reload:
 
-    xrdb -load ~/.Xresources
+```sh
+xrdb -load ~/.Xresources
+```
 
 Start a new terminal and test with Ctrl+Alt+f.
 

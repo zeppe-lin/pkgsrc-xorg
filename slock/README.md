@@ -6,10 +6,12 @@ README slock
 XAUTOLOCK
 =========
 
-`slock` can be started after a specific period of user inactivity using
-`xautolock`.  The command syntax is:
+`slock` can be started after a specific period of user inactivity
+using `xautolock`.  The command syntax is:
 
-    xautolock -time 10 -locker slock
+```sh
+xautolock -time 10 -locker slock
+```
 
 The alternatives to `xautolock` might be:
   1. https://git.suckless.org/xssstate/
