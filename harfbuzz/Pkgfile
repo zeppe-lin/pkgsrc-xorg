@@ -11,7 +11,7 @@
 #   introspection  disabled (glib-introspection)
 
 name=harfbuzz
-version=12.3.1
+version=12.3.2
 release=1
 source=https://github.com/$name/$name/archive/$version/$name-$version.tar.gz
 
