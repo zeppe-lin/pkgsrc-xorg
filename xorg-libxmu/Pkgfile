@@ -3,19 +3,19 @@
 # Depends on:  xorg-libxext xorg-libxt xorg-libx11
 
 name=xorg-libxmu
-version=1.2.1
+version=1.3.0
 release=1
 source=https://www.x.org/releases/individual/lib/libXmu-$version.tar.xz
 
 build() {
 	mkdir build; cd build
 
-	../libXmu-$version/configure  \
-		--prefix=/usr         \
-		--disable-docs        \
-		--without-fop         \
-		--without-xmlto       \
-		--without-xsltproc    \
+	../libXmu-$version/configure \
+		--prefix=/usr \
+		--disable-docs \
+		--without-fop \
+		--without-xmlto \
+		--without-xsltproc \
 
 	make V=1
 	make DESTDIR=$PKG install
