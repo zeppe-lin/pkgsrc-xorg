@@ -3,15 +3,15 @@
 # Depends on:  xorg-libxfixes
 
 name=xorg-libxdamage
-version=1.1.6
+version=1.1.7
 release=1
 source=https://www.x.org/releases/individual/lib/libXdamage-$version.tar.xz
 
 build() {
 	mkdir build; cd build
 
-	../libXdamage-$version/configure  \
-		--prefix=/usr             \
+	../libXdamage-$version/configure \
+		--prefix=/usr \
 
 	make V=1
 	make DESTDIR=$PKG install
