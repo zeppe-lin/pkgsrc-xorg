@@ -3,15 +3,15 @@
 # Depends on:  xorg-libxext xorg-libxrender
 
 name=xorg-libxrandr
-version=1.5.4
+version=1.5.5
 release=1
 source=https://www.x.org/releases/individual/lib/libXrandr-$version.tar.xz
 
 build() {
 	mkdir build; cd build
 
-	../libXrandr-$version/configure  \
-		--prefix=/usr            \
+	../libXrandr-$version/configure \
+		--prefix=/usr \
 
 	make V=1
 	make DESTDIR=$PKG install
