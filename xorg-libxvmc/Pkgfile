@@ -3,22 +3,22 @@
 # Depends on:  xorg-libxv
 
 name=xorg-libxvmc
-version=1.0.14
+version=1.0.15
 release=1
 source=https://www.x.org/releases/individual/lib/libXvMC-$version.tar.xz
 
 build() {
-	meson setup build libXvMC-$version  \
-		--prefix=/usr               \
-		--buildtype=plain           \
-		--wrap-mode=nodownload      \
-		-D b_lto=true               \
-		-D b_pie=true               \
+	meson setup build libXvMC-$version \
+		--prefix=/usr \
+		--buildtype=plain \
+		--wrap-mode=nodownload \
+		-D b_lto=true \
+		-D b_pie=true \
 
 	ninja -C build -j ${JOBS:-1} -v
 	DESTDIR=$PKG ninja -C build install
 
-	# remove junk
+	# Remove junk
 	rm -r $PKG/usr/share/doc
 	rmdir $PKG/usr/share
 }
