@@ -3,24 +3,24 @@
 # Depends on:  xorg-libxext xorg-libxt
 
 name=xorg-libxpm
-version=3.5.17
+version=3.5.18
 release=1
 source=https://www.x.org/releases/individual/lib/libXpm-$version.tar.xz
 
 build() {
-	# patch out gettext dependency
-	sed -i 's/xgettext/true/g'                \
-		libXpm-$version/sxpm/Makefile.in  \
-		libXpm-$version/cxpm/Makefile.in  \
+	# Patch out gettext dependency
+	sed -i 's/xgettext/true/g' \
+		libXpm-$version/sxpm/Makefile.in \
+		libXpm-$version/cxpm/Makefile.in \
 
 	mkdir build; cd build
 
 	# --without-glib: disable GLib for unit testing
-	../libXpm-$version/configure  \
-		--prefix=/usr         \
-		--disable-open-zfile  \
-		--disable-unit-tests  \
-		--without-glib        \
+	../libXpm-$version/configure \
+		--prefix=/usr \
+		--disable-open-zfile \
+		--disable-unit-tests \
+		--without-glib \
 
 	make V=1
 	make DESTDIR=$PKG install
