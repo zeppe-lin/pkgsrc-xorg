@@ -3,15 +3,15 @@
 # Depends on:  xorg-libxext
 
 name=xorg-libxxf86dga
-version=1.1.6
+version=1.1.7
 release=1
 source=https://www.x.org/releases/individual/lib/libXxf86dga-$version.tar.xz
 
 build() {
 	mkdir build; cd build
 
-	../libXxf86dga-$version/configure  \
-		--prefix=/usr              \
+	../libXxf86dga-$version/configure \
+		--prefix=/usr \
 
 	make V=1
 	make DESTDIR=$PKG install
