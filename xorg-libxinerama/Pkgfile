@@ -3,15 +3,15 @@
 # Depends on:  xorg-libxext
 
 name=xorg-libxinerama
-version=1.1.5
+version=1.1.6
 release=1
 source=https://www.x.org/releases/individual/lib/libXinerama-$version.tar.xz
 
 build() {
 	mkdir build; cd build
 
-	../libXinerama-$version/configure  \
-		--prefix=/usr              \
+	../libXinerama-$version/configure \
+		--prefix=/usr \
 
 	make V=1
 	make DESTDIR=$PKG install
