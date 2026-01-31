@@ -1,9 +1,8 @@
-README xorg-server
+README for xorg-server
 
 ---
 
-
-WARNING
+CAUTION
 =======
 
 If you fail to rebuild input and video packages for `xorg-server` on
@@ -19,6 +18,7 @@ key:
 reisub
 ```
 
+---
 
 POST-INSTALL
 ============
@@ -26,9 +26,8 @@ POST-INSTALL
 After upgrading `xorg-server`, from major versions rebuild video and
 input packages:
 
-**NOTE:**
-This only applies on ABI changes between major versions, e.g.,
-1.16.0 -> 1.17.0.
+**Note:** This only applies on ABI changes between major versions,
+e.g., 1.16.0 -> 1.17.0.
 
 ```sh
 # as root
@@ -42,7 +41,6 @@ If you use nvidia you also need to do this:
 # as root
 gl-select use xorg && gl-select use nvidia
 ```
-
 
 ---
 

@@ -1,7 +1,6 @@
-README transset
+README for transset
 
 ---
-
 
 REQUIREMENTS
 ============
@@ -15,6 +14,7 @@ The following composite managers are available:
 * `picom`
 * `xorg-xcompmgr`
 
+---
 
 CONFIGURATION
 =============
@@ -43,7 +43,6 @@ control + b:4
 "transset -p --inc 0.1"
 control + b:5
 ```
-
 
 ---
 

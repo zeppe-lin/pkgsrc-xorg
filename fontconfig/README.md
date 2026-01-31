@@ -1,7 +1,6 @@
-README fontconfig
+README for fontconfig
 
 ---
-
 
 POST-INSTALL
 ============
@@ -23,6 +22,7 @@ Configuration snippets in `/etc/fonts/conf.avail` can be symlinked
 from `/etc/fonts/conf.d` instead of duplicating XML code in
 `/etc/fonts/local.conf`.
 
+---
 
 REFERENCES
 ==========
@@ -32,7 +32,6 @@ https://gitlab.freedesktop.org/fontconfig/fontconfig/-/raw/main/conf.d/README.in
 
 * `fontconfig`:
 https://www.freedesktop.org/software/fontconfig/fontconfig-user.html
-
 
 ---
 

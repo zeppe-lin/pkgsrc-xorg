@@ -1,7 +1,6 @@
-README harfbuzz
+README for harfbuzz
 
 ---
-
 
 POST-INSTALL
 ============
@@ -12,7 +11,6 @@ After `harfbuzz` is installed, rebuild and reinstall `freetype`:
 # as root
 pkgman update -fr --deps --depsort freetype
 ```
-
 
 ---
 

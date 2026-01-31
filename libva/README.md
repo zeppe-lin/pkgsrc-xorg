@@ -1,7 +1,6 @@
-README libva
+README for libva
 
 ---
-
 
 REQUIREMENTS
 ============
@@ -11,7 +10,6 @@ card:
 
 * `libva-vdpau-driver`:  vdpau back-end for nvidia
 * `libva-intel-driver`:  vdpau back-end for intel
-
 
 ---
 

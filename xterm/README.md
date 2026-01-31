@@ -1,7 +1,6 @@
-README xterm
+README for xterm
 
 ---
-
 
 NOTES
 =====
@@ -37,7 +36,6 @@ xrdb -load ~/.Xresources
 ```
 
 Start a new terminal and test with Ctrl+Alt+f.
-
 
 ---
 

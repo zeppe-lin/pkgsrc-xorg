@@ -1,7 +1,6 @@
-README xorg-xbacklight
+README for xorg-xbacklight
 
 ---
-
 
 TROUBLESHOOTING
 ===============
@@ -26,7 +25,6 @@ Section "Device"
     Option      "Backlight"  "intel_backlight"
 EndSection
 ```
-
 
 ---
 
