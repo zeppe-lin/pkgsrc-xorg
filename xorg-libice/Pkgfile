@@ -4,21 +4,24 @@
 
 name=xorg-libice
 version=1.1.2
-release=1
+release=2
 source=https://www.x.org/releases/individual/lib/libICE-$version.tar.xz
 
 build() {
 	mkdir build; cd build
 
-	../libICE-$version/configure  \
-		--prefix=/usr         \
-		--disable-docs        \
-		--without-xmlto       \
-		--without-xsltproc    \
+	../libICE-$version/configure \
+		--prefix=/usr \
+		--enable-ipv6 \
+		--disable-docs \
+		--without-xmlto \
+		--without-xsltproc \
+		--without-fop \
 
 	make V=1
 	make DESTDIR=$PKG install
 
-	# remove junk
-	rm -r $PKG/usr/share/doc; rmdir $PKG/usr/share
+	# Remove junk
+	rm -r $PKG/usr/share/doc
+	rmdir $PKG/usr/share
 }
