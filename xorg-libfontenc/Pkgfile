@@ -3,15 +3,15 @@
 # Depends on:  xorg-util-macros xorg-xorgproto zlib
 
 name=xorg-libfontenc
-version=1.1.8
+version=1.1.9
 release=1
 source=https://www.x.org/releases/individual/lib/libfontenc-$version.tar.xz
 
 build() {
 	mkdir build; cd build
 
-	../libfontenc-$version/configure  \
-		--prefix=/usr             \
+	../libfontenc-$version/configure \
+		--prefix=/usr \
 
 	make V=1
 	make DESTDIR=$PKG install
