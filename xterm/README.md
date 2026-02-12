@@ -5,15 +5,16 @@ README for xterm
 NOTES
 =====
 
-Opening terminal links with the keyboard
+Opening Terminal Links with the Keyboard
 ----------------------------------------
 
-**Requires**:
-  * `p5-regexp-common`
-  * `pick`
-  * `xdg-utils`
+**Requires:**
 
-Create a script named `urlpick.sh` and place it in your `$PATH`:
+- `p5-regexp-common`
+- `pick`
+- `xdg-utils`
+
+Create a script named `urlpick.sh` in your `$PATH`:
 
 ```sh
 #!/bin/sh
@@ -21,7 +22,7 @@ perl -MRegexp::Common -lne 'print $1 if /$RE{URI}{-keep}/' |
     pick | xargs xdg-open
 ```
 
-Add this to your `.Xresources`:
+Add to your `.Xresources`:
 
 ```
 XTerm*printerCommand: xterm -T urlpick.sh -e sh -c 'urlpick.sh <&3' 3<&0
@@ -29,13 +30,13 @@ XTerm*printerCommand: xterm -T urlpick.sh -e sh -c 'urlpick.sh <&3' 3<&0
     Ctrl Alt <Key>F: print-everything(noAttrs)
 ```
 
-Reload:
+Reload configuration:
 
 ```sh
 xrdb -load ~/.Xresources
 ```
 
-Start a new terminal and test with Ctrl+Alt+f.
+Open a new terminal and test with **Ctrl+Alt+F**.
 
 ---
 

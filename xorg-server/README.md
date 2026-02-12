@@ -2,44 +2,37 @@ README for xorg-server
 
 ---
 
-CAUTION
+UPGRADE
 =======
 
-If you fail to rebuild input and video packages for `xorg-server` on
-major ABI changes, e.g., 1.16.0 -> 1.17.0.  You will end up with no
-mouse or keyboard and possibly no direct 3D acceleration for video.
-
-If you do happen to forget and have sys-rq enabled in your kernel you
-can do a safe reboot with holding down Alt + SysRq, and typing the
-following sequence in order, pausing for several seconds between each
-key:
-
-```
-reisub
-```
-
----
-
-POST-INSTALL
-============
-
-After upgrading `xorg-server`, from major versions rebuild video and
-input packages:
-
-**Note:** This only applies on ABI changes between major versions,
-e.g., 1.16.0 -> 1.17.0.
+On major ABI changes (e.g., 1.16.0 -> 1.17.0) you must rebuild input
+and video packages.  Failure to do so may leave you without mouse,
+keyboard, or 3D acceleration:
 
 ```sh
 # as root
 pkgman update -fr $(pkgman list --regex \
-              --filter='^xorg-xf86-(input|video)|^mesa')
+                    --filter='^xorg-xf86-(input|video)|^mesa')
 ```
 
-If you use nvidia you also need to do this:
+NVIDIA Users
+------------
+
+If you use NVIDIA, also run:
 
 ```sh
 # as root
 gl-select use xorg && gl-select use nvidia
+```
+
+Safe Reboot (SysRq)
+-------------------
+
+If you forget to rebuild and lose input, and your kernel has SysRq
+enabled, you can reboot safely by holding Alt + SysRq and typing:
+
+```
+reisub
 ```
 
 ---

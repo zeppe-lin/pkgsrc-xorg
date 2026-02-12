@@ -2,8 +2,11 @@ README for slock
 
 ---
 
-XAUTOLOCK
-=========
+CONFIGURATION
+=============
+
+Xautolock
+---------
 
 `slock` can be started after a specific period of user inactivity
 using `xautolock`.  The command syntax is:

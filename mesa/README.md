@@ -2,8 +2,11 @@ README for mesa
 
 ---
 
-HARDWARE ACCELERATION
-=====================
+REQUIREMENTS
+============
+
+Hardware Acceleration
+---------------------
 
 Install `libva` package before building mesa to get hardware
 acceleration for the following drivers:
@@ -16,8 +19,8 @@ usr/lib/dri/radeonsi_drv_video.so
 
 ---
 
-REFERENCES
-==========
+FURTHER READING
+===============
 
 * Beyond Linux From Scratch (System V Edition):
   <https://www.linuxfromscratch.org/blfs/view/svn/x/mesa.html>

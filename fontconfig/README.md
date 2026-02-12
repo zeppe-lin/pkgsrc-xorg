@@ -24,8 +24,8 @@ from `/etc/fonts/conf.d` instead of duplicating XML code in
 
 ---
 
-REFERENCES
-==========
+FURTHER READING
+===============
 
 * `conf.avail/conf.d`:
 https://gitlab.freedesktop.org/fontconfig/fontconfig/-/raw/main/conf.d/README.in
