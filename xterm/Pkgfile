@@ -3,7 +3,7 @@
 # Depends on:  util-linux xorg-font-alias xorg-font-misc-misc xorg-libxaw
 
 name=xterm
-version=406
+version=407
 release=1
 source=https://invisible-mirror.net/archives/xterm/xterm-$version.tgz
 
@@ -14,6 +14,7 @@ build() {
 		--prefix=/usr \
 		--disable-nls \
 		--enable-256-color \
+		--enable-resize-adjust \
 		--enable-wide-chars \
 		--with-app-defaults=/usr/share/X11/app-defaults
 
@@ -22,4 +23,5 @@ build() {
 
 	install -m 0644 -Dt $PKG/usr/share/applications \
 		../xterm-$version/xterm.desktop
+	sed -i '/^#/d' $PKG/usr/share/applications/xterm.desktop
 }
