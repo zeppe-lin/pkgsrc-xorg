@@ -3,29 +3,29 @@
 # Depends on:  xorg-xkbcomp libxslt
 
 name=xkeyboard-config
-version=2.46
+version=2.47
 release=1
 source="https://www.x.org/releases/individual/data/$name/$name-$version.tar.xz
 	man-xsl.patch"
 
 build() {
-	patch -d $name-$version/man -Np0 -i $SRC/man-xsl.patch
+	patch -d $name-$version/man -p0 -i $SRC/man-xsl.patch
 	sed -i "/^subdir('po')/d" $name-$version/meson.build
 
-	meson build $name-$version                \
-		--prefix=/usr                     \
-		--buildtype=plain                 \
-		--wrap-mode=nodownload            \
-		-D b_lto=true                     \
-		-D b_pie=true                     \
-		-D compat-rules=true              \
-		-D xorg-rules-symlinks=true       \
+	meson setup build $name-$version \
+		--prefix=/usr \
+		--buildtype=plain \
+		--wrap-mode=nodownload \
+		-D b_lto=true \
+		-D b_pie=true \
+		-D compat-rules=true \
+		-D xorg-rules-symlinks=true \
 
 	ninja -C build -j ${JOBS:-1} -v
 	DESTDIR=$PKG ninja -C build install
 
 	mkdir -p $PKG/var/lib/xkb
 
-	# remove junk
+	# Remove junk
 	find $PKG -type f -name README -delete
 }
