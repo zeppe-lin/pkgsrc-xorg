@@ -3,29 +3,27 @@
 # Depends on:  libxkbcommon xorg-libxinerama xorg-libxtst
 
 name=xdotool
-version=4.20251130.1
+version=4.20260303.1
 release=1
 source=https://github.com/jordansissel/$name/archive/v$version/$name-$version.tar.gz
 
 build() {
 	cd $name-$version
 
-	# fix man path
-	sed -i 's|INSTALLMAN?=$(PREFIX)/man|INSTALLMAN?=$(PREFIX)/share/man|' \
-		Makefile
-
-	# remove debug flag
+	# Remove debug flag
 	sed -i '/CFLAGS+=-g #/d' Makefile
 
-	make PREFIX=/usr DESTDIR=$PKG
+	make PREFIX=/usr INSTALLMAN=/usr/share/man DESTDIR=$PKG
 
 	# install - call the make targets individually.
 	#
 	# This is because 'make install' calls ldconfig in the
 	# post-install target.  We don't want this since it requires
 	# root, plus the package manager does that for us after install.
-	make PREFIX=/usr DESTDIR=$PKG pre-install installlib \
-		installprog installman installheader
+	make PREFIX=/usr INSTALLMAN=/usr/share/man DESTDIR=$PKG \
+		pre-install installlib installprog installman \
+		installheader
 
+	# Fix permissions
 	chmod -x $PKG/usr/include/xdo.h
 }
