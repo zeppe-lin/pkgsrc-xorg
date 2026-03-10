@@ -1,1 +1,6 @@
-6337ecc72cf7bd393f319fc822294105  wmctrl-1.07-7ecfd2a.tar.gz
+5d5ae33aaca04d81aaf36bae1ba7077d  02_manpage-fixes.patch
+da45631e7a15da750117f48b1441c432  03_cross.patch
+7df4e6da94db4bd0c2dc42468c49a077  04_manpage.patch
+41ee62070dbfade227702bb458188698  05_add_app_icon.patch
+c40858cbd0e835bb0ecae51a72363fa5  06_add_info.patch
+8d863676f2c78431b272af55874e3f0c  wmctrl-1.07-1105759.tar.gz

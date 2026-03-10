@@ -1,18 +1,28 @@
-# Description: Control your EWMH compliant window manager from command line
+# Description: Control an EWMH/NetWM compatible X Window Manager
 # URL:         https://github.com/saravanabalagi/wmctrl
 # Depends on:  glib libpcre2 xorg-libxmu
 
 name=wmctrl
-version=1.07-7ecfd2a
+version=1.07-1105759
 release=1
-source=https://github.com/saravanabalagi/$name/archive/${version#*-}/$name-$version.tar.gz
+source="https://github.com/saravanabalagi/$name/archive/${version#*-}/$name-$version.tar.gz
+	02_manpage-fixes.patch
+	03_cross.patch
+	04_manpage.patch
+	05_add_app_icon.patch
+	06_add_info.patch"
 
 build() {
+	# Apply Debian patches
+	for f in $SRC/*.patch; do
+		patch -d $name* -p1 -i $f
+	done
+
 	mkdir build; cd build
 
-	../$name*/configure              \
-		--prefix=/usr            \
-		--mandir=/usr/share/man  \
+	autoreconf -fiv ../$name*
+	../$name*/configure \
+		--prefix=/usr \
 
 	make V=1
 	make DESTDIR=$PKG install

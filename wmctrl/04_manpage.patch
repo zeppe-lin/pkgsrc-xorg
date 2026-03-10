@@ -1,0 +1,62 @@
+Author: Andreas Tille <tille@debian.org>
+Bug-Debian: https://bugs.debian.org/683968
+            https://bugs.debian.org/683970
+Last-Update: Mon, 30 Sep 2024 06:50:53 +0200
+Subject: Fix manpage
+
+--- a/wmctrl.1
++++ b/wmctrl.1
+@@ -43,7 +43,7 @@ command.
+ .BI \-a " <WIN>"
+ Switch to the desktop containing the window
+ .IR <WIN> ,
+-raise the window, and give it focus.
++(see below) raise the window, and give it focus.
+ 
+ .TP
+ .BI "\-b  ( add | remove | toggle)," prop1 " [," prop2 " ]"
+@@ -51,7 +51,7 @@ Add, remove, or toggle up to two window
+ window that is being modified must be identified with a
+ .B \-r
+ action. The
+-property change is achived by using the EWMH _NET_WM_STATE
++property change is achieved by using the EWMH _NET_WM_STATE
+ request. The supported property names (for
+ .IR prop1 " and " prop2 )
+ are
+@@ -92,7 +92,7 @@ and then the desktop geometry as
+ string
+ .B "VP:"
+ and then the viewport position in the format
+-.RI ' <y> , <y> '
++.RI ' <x> , <y> '
+ (\fIe.g.\fR '0,0'). The next three columns after this contains the
+ fixed string
+ .B "WA:"
+@@ -293,7 +293,7 @@ geometry value should not be modified.
+ .I <WIN>
+ This argument specifies a window that is the target of an action. By
+ default the argument is treated as if were a string, and windows are
+-examined until one is found with a title the contains the specified
++examined until one is found with a title that contains the specified
+ string as a substring. The substring matching is done in a case
+ insensitive manner. The
+ .B \-F
+@@ -318,7 +318,7 @@ to use the currently active window for t
+ 
+ .TP
+ .I <WORKAROUND>
+-There is only one work around currently implemeted. It is specified by
++There is only one work around currently implemented. It is specified by
+ using the string
+ .B DESKTOP_TITLES_INVALID_UTF8
+ and it causes the printing of non\-ASCII desktop tiles correctly when
+@@ -348,7 +348,7 @@ Close a very specifically titled window
+ .IP
+ wmctrl \-F \-c 'Debian bug tracking system \- Mozilla'
+ .PP
+-Toggle the 'stickiness' of a window with a specific window identity
++Set the 'stickiness' of a window with a specific window identity
+ .IP
+ wmctrl \-i \-r 0x0120002 \-b add,sticky
+ .PP

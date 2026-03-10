@@ -1,0 +1,18 @@
+From: Helmut Grohne <helmut@subdivi.de>
+Bug-Debian: https://bugs.debian.org/846827
+Last-Update: Sat, 3 Dec 2016 14:48:02 UTC
+Subject: consider ac_tool_prefix when searching for pkg-config
+
+Index: wmctrl-1.07/aclocal.m4
+===================================================================
+--- wmctrl-1.07.orig/aclocal.m4
++++ wmctrl-1.07/aclocal.m4
+@@ -863,7 +863,7 @@
+       esac
+   done
+ 
+-  AC_PATH_PROG(PKG_CONFIG, pkg-config, no)
++  AC_REQUIRE([PKG_PROG_PKG_CONFIG])
+ 
+   no_glib=""
+ 
