@@ -1,6 +1,6 @@
 # Description: GL Vendor-Neutral Dispatch library
 # URL:         https://github.com/NVIDIA/libglvnd
-# Depends on:  xorg-libx11
+# Depends on:  xorg-libx11 xorg-libxext xorg-xorgproto
 
 name=libglvnd
 version=1.7.0
@@ -13,15 +13,15 @@ build() {
 	#fi
 	PKGMK_GLVND="$PKGMK_GLVND -D x11=enabled -D glx=enabled"
 
-	meson build $name-$version       \
-		--prefix=/usr            \
-		--buildtype=plain        \
-		--wrap-mode=nodownload   \
-		-D b_lto=true            \
-		-D b_pie=true            \
-		-D gles1=false           \
-		-D egl=true              \
-		-D tls=false             \
+	meson setup build $name-$version \
+		--prefix=/usr \
+		--buildtype=plain \
+		--wrap-mode=nodownload \
+		-D b_lto=true \
+		-D b_pie=true \
+		-D gles1=false \
+		-D egl=true \
+		-D tls=false \
 		$PKGMK_GLVND
 
 	ninja -C build -j ${JOBS:-1} -v
