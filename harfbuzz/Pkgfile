@@ -9,9 +9,11 @@
 #   icu            disabled (icu)
 #   docs           disabled (gtk-doc)
 #   introspection  disabled (glib-introspection)
+#   zlib, png      for gzip-compressed SVG glyphs in harfbuzz-raster,
+#                  disabled (zlib, libpng)
 
 name=harfbuzz
-version=13.1.0
+version=13.1.1
 release=1
 source=https://github.com/$name/$name/archive/$version/$name-$version.tar.gz
 
@@ -31,6 +33,8 @@ build() {
 		-D icu=disabled \
 		-D gobject=disabled \
 		-D introspection=disabled \
+		-D png=disabled \
+		-D zlib=disabled \
 
 	ninja -C build -j ${JOBS:-1} -v
 	DESTDIR=$PKG ninja -C build install
