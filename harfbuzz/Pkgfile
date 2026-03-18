@@ -13,7 +13,7 @@
 #                  disabled (zlib, libpng)
 
 name=harfbuzz
-version=13.1.1
+version=13.2.0
 release=1
 source=https://github.com/$name/$name/archive/$version/$name-$version.tar.gz
 
