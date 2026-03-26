@@ -2,11 +2,11 @@
 # URL:         https://www.khronos.org/vulkan/
 # Depends on:  vulkan-headers xorg-libxrandr
 
-# Maintainer notes on dependencies:
+# Notes on dependencies:
 #   wayland: (enabled if installed)
 
 name=vulkan-loader
-version=1.4.328.0
+version=1.4.341
 release=1
 
 # If version has 3 dots (a.b.c.d), it's a release; otherwise it's a tag
