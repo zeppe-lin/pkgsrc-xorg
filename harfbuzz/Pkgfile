@@ -4,6 +4,7 @@
 
 # Notes on dependencies:
 #   cairo          required (optional upstream, enforced here)
+#   chafa          disabled (chafa)
 #   glib           enabled for building pango
 #   graphite2      disabled (graphite2)
 #   icu            disabled (icu)
@@ -13,7 +14,7 @@
 #                  disabled (zlib, libpng)
 
 name=harfbuzz
-version=13.2.1
+version=14.1.0
 release=1
 source=https://github.com/$name/$name/archive/$version/$name-$version.tar.gz
 
@@ -26,6 +27,7 @@ build() {
 		-D b_pie=true \
 		-D glib=enabled \
 		-D benchmark=disabled \
+		-D chafa=disabled \
 		-D docs=disabled \
 		-D graphite=auto \
 		-D graphite2=disabled \
