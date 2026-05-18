@@ -3,21 +3,21 @@
 # Depends on:  libbsd xorg-libxext xorg-libxfixes
 
 name=xorg-libxi
-version=1.8.2
+version=1.8.3
 release=1
 source=https://www.x.org/releases/individual/lib/libXi-$version.tar.xz
 
 build() {
 	mkdir build; cd build
 
-	../libXi-$version/configure  \
-		--prefix=/usr        \
-		--disable-docs       \
-		--disable-specs      \
-		--without-fop        \
-		--without-xsltproc   \
-		--without-xmlto      \
-		--without-asciidoc   \
+	../libXi-$version/configure \
+		--prefix=/usr \
+		--disable-docs \
+		--disable-specs \
+		--without-fop \
+		--without-xsltproc \
+		--without-xmlto \
+		--without-asciidoc \
 
 	make V=1
 	make DESTDIR=$PKG install
