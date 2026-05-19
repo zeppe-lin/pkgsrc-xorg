@@ -3,15 +3,15 @@
 # Depends on:  xorg-xrandr
 
 name=xorg-xev
-version=1.2.6
+version=1.2.7
 release=1
 source=https://www.x.org/releases/individual/app/xev-$version.tar.xz
 
 build() {
 	mkdir build; cd build
 
-	../xev-$version/configure  \
-		--prefix=/usr      \
+	../xev-$version/configure \
+		--prefix=/usr \
 
 	make V=1
 	make DESTDIR=$PKG install
