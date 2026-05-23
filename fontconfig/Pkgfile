@@ -3,7 +3,7 @@
 # Depends on:  expat freetype
 
 name=fontconfig
-version=2.17.1
+version=2.18.0
 release=1
 #source=https://fontconfig.org/release/$name-$version.tar.xz
 source=https://gitlab.freedesktop.org/api/v4/projects/890/packages/generic/$name/$version/$name-$version.tar.xz
@@ -11,22 +11,22 @@ source=https://gitlab.freedesktop.org/api/v4/projects/890/packages/generic/$name
 build() {
 	mkdir build; cd build
 
-	../$name-$version/configure                       \
-		--prefix=/usr                             \
-		--sysconfdir=/etc                         \
-		--localstatedir=/var                      \
-		--with-xmldir=/etc/fonts                  \
-		--with-templatedir=/etc/fonts/conf.avail  \
-		--disable-nls                             \
+	../$name-$version/configure \
+		--prefix=/usr \
+		--sysconfdir=/etc \
+		--localstatedir=/var \
+		--with-xmldir=/etc/fonts \
+		--with-templatedir=/etc/fonts/conf.avail \
+		--disable-nls \
 
 	make V=1
 	make DESTDIR=$PKG install
 
-	# enabling autohinting by default
+	# Enabling autohinting by default
 	ln -sf /etc/fonts/conf.avail/10-autohint.conf \
 		$PKG/etc/fonts/conf.d/10-autohint.conf
 
-	# remove junk
+	# Remove junk
 	rm $PKG/etc/fonts/conf.d/README
 	rm -r $PKG/usr/share/doc $PKG/usr/share/gettext
 }
