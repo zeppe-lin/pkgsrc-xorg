@@ -171,6 +171,7 @@ drwxr-xr-x	root/root	usr/share/man/man3/
 -rw-r--r--	root/root	usr/share/man/man3/FcConfigGetFonts.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/FcConfigGetRescanInterval.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/FcConfigGetSysRoot.3.gz
+-rw-r--r--	root/root	usr/share/man/man3/FcConfigGetWarningFlags.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/FcConfigHome.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/FcConfigParseAndLoad.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/FcConfigParseAndLoadFromMemory.3.gz
@@ -181,6 +182,7 @@ drwxr-xr-x	root/root	usr/share/man/man3/
 -rw-r--r--	root/root	usr/share/man/man3/FcConfigSetFontSetFilter.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/FcConfigSetRescanInterval.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/FcConfigSetSysRoot.3.gz
+-rw-r--r--	root/root	usr/share/man/man3/FcConfigSetWarningFlags.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/FcConfigSubstitute.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/FcConfigSubstituteWithPat.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/FcConfigUptoDate.3.gz
