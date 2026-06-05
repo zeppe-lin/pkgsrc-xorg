@@ -6,7 +6,7 @@
 #   wayland-protocols: (enabled if installed)
 
 name=libinput
-version=1.31.2
+version=1.31.3
 release=1
 source=https://gitlab.freedesktop.org/$name/$name/-/archive/$version/$name-$version.tar.bz2
 
