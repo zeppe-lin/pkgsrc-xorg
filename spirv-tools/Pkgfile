@@ -3,13 +3,13 @@
 # Depends on:  spirv-headers
 
 name=spirv-tools
-version=1.4.341.0
+version=1.4.350.0
 release=1
 source=https://github.com/KhronosGroup/SPIRV-Tools/archive/vulkan-sdk-$version/SPIRV-Tools-v$version.tar.gz
 
 build() {
-	CFLAGS="$CFLAGS -ffat-lto-objects"
-	CXXFLAGS="$CXXFLAGS -ffat-lto-objects"
+	export CFLAGS="$CFLAGS -ffat-lto-objects"
+	export CXXFLAGS="$CXXFLAGS -ffat-lto-objects"
 
 	cmake_args="
 	-S SPIRV-Tools-vulkan-sdk-$version
