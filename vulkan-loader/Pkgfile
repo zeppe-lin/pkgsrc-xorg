@@ -6,14 +6,14 @@
 #   wayland: (enabled if installed)
 
 name=vulkan-loader
-version=1.4.341
+version=1.4.350.0
 release=1
 
 # If version has 3 dots (a.b.c.d), it's a release; otherwise it's a tag
 case $version in
 *.*.*.*)
 	_srcdir="Vulkan-Loader-vulkan-sdk-$version"
-	source=https://github.com/KhronosGroup/Vulkan-Loader/archive/refs/tags/vulkan-sdk-$version.tar.gz
+	source=$name-$version.tar.gz::https://github.com/KhronosGroup/Vulkan-Loader/archive/refs/tags/vulkan-sdk-$version.tar.gz
 	;;
 *.*.*)
 	_srcdir="Vulkan-Loader-$version"
@@ -36,6 +36,7 @@ build() {
 		-D CMAKE_SKIP_RPATH=ON \
 		-D BUILD_TESTS=OFF \
 		$PKGMK_VULKAN_LOADER \
+		-Wno-dev \
 
 	ninja -C build -j ${JOBS:-1} -v
 	DESTDIR=$PKG ninja -C build install
