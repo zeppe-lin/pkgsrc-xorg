@@ -3,7 +3,7 @@
 # Depends on:  llvm spirv-tools
 
 name=spirv-llvm-translator
-version=22.1.1
+version=22.1.2
 release=1
 source=https://github.com/KhronosGroup/SPIRV-LLVM-Translator/archive/v$version/$name-$version.tar.gz
 
@@ -12,7 +12,9 @@ build() {
 		PATH="$(echo $PATH | awk -v RS=: -v ORS=: '/ccache/ {next} {print}' | sed 's/:*$//')"
 	fi
 
-	cmake -S SPIRV-LLVM-Translator-$version -B build -G Ninja \
+	srcdir="SPIRV-LLVM-Translator-$version"
+
+	cmake -S $srcdir -B build -G Ninja \
 		-D CMAKE_INSTALL_PREFIX=/usr \
 		-D CMAKE_INSTALL_LIBDIR=lib \
 		-D CMAKE_BUILD_TYPE=Release \
