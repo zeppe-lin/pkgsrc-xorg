@@ -7,12 +7,14 @@
 #   libclc generates LLVM IR and cannot be built or utilized with GCC.
 
 name=libclc
-version=22.1.5 # keep in sync with llvm
+version=22.1.7 # keep in sync with llvm
 release=1
 source=https://github.com/llvm/llvm-project/releases/download/llvmorg-$version/llvm-project-$version.src.tar.xz
 
 build() {
-	cmake -S llvm-project-$version.src/libclc -B build -G Ninja \
+	llvmdir="llvm-project-$version.src"
+
+	cmake -S $llvmdir/libclc -B build -G Ninja \
 		-D CMAKE_INSTALL_PREFIX=/usr \
 		-D CMAKE_INSTALL_LIBDIR=lib \
 		-D CMAKE_BUILD_TYPE=Release \
