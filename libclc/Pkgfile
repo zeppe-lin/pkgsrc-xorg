@@ -7,7 +7,7 @@
 #   libclc generates LLVM IR and cannot be built or utilized with GCC.
 
 name=libclc
-version=22.1.7 # keep in sync with llvm
+version=22.1.8 # keep in sync with llvm
 release=1
 source=https://github.com/llvm/llvm-project/releases/download/llvmorg-$version/llvm-project-$version.src.tar.xz
 
