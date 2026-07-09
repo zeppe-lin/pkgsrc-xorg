@@ -145,6 +145,7 @@ drwxr-xr-x	root/root	usr/share/man/man3/
 -rw-r--r--	root/root	usr/share/man/man3/FcCharSetSubtract.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/FcCharSetSubtractCount.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/FcCharSetUnion.3.gz
+-rw-r--r--	root/root	usr/share/man/man3/FcConfigAcceptFilename.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/FcConfigAcceptFilter.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/FcConfigAcceptFont.3.gz
 -rw-r--r--	root/root	usr/share/man/man3/FcConfigAppFontAddDir.3.gz
