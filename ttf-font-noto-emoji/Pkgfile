@@ -1,0 +1,14 @@
+# Description: Noto color emoji font
+# URL:         https://github.com/googlefonts/noto-emoji
+# Depends on:  fontconfig xorg-mkfontscale
+
+name=ttf-font-noto-emoji
+version=2.051
+release=1
+source=https://github.com/googlefonts/noto-emoji/archive/v$version/noto-emoji-$version.tar.gz
+
+build() {
+	install -m 0644 -D \
+		noto-emoji-$version/fonts/NotoColorEmoji.ttf \
+		$PKG/usr/share/fonts/TTF/NotoColorEmoji.ttf
+}
