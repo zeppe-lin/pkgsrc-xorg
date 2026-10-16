@@ -1,5 +1,6 @@
 # Description: Display locker for X
 # URL:         https://tools.suckless.org/slock/
+# Maintainer:  UNMAINTAINED
 # Depends on:  xorg-libxext xorg-libxrandr
 
 name=slock
