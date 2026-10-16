@@ -1,0 +1,13 @@
+# Description: Noto fonts
+# URL:         https://github.com/notofonts/
+
+name=otf-font-noto
+version=2025.12.01
+release=1
+source=https://github.com/notofonts/notofonts.github.io/archive/refs/tags/noto-monthly-release-$version.tar.gz
+
+build() {
+	find notofonts.github.io-noto-monthly-release-$version/fonts/*/unhinted/otf \
+		-iname '*.otf' \
+		-execdir install -m 0644 -Dt $PKG/usr/share/fonts/OTF {} \;
+}
